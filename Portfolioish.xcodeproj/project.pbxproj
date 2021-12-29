@@ -1,0 +1,514 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		381BC058277C0A670055712F /* PortfolioishApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BC048277C0A660055712F /* PortfolioishApp.swift */; };
+		381BC059277C0A670055712F /* PortfolioishApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BC048277C0A660055712F /* PortfolioishApp.swift */; };
+		381BC05A277C0A670055712F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BC049277C0A660055712F /* ContentView.swift */; };
+		381BC05B277C0A670055712F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BC049277C0A660055712F /* ContentView.swift */; };
+		381BC05C277C0A670055712F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 381BC04A277C0A670055712F /* Assets.xcassets */; };
+		381BC05D277C0A670055712F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 381BC04A277C0A670055712F /* Assets.xcassets */; };
+		381BC068277C0D5E0055712F /* Portfolioish.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 381BC066277C0D5E0055712F /* Portfolioish.xcdatamodeld */; };
+		381BC069277C0D5E0055712F /* Portfolioish.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 381BC066277C0D5E0055712F /* Portfolioish.xcdatamodeld */; };
+		381BC06B277C137E0055712F /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BC06A277C137E0055712F /* PersistenceController.swift */; };
+		381BC06C277C137E0055712F /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BC06A277C137E0055712F /* PersistenceController.swift */; };
+		381BC071277C20940055712F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381BC070277C20940055712F /* CloudKit.framework */; };
+		38D35D41277CF4C7002A9486 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D40277CF4C7002A9486 /* HomeView.swift */; };
+		38D35D42277CF4C7002A9486 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D40277CF4C7002A9486 /* HomeView.swift */; };
+		38D35D44277CF57F002A9486 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D43277CF57F002A9486 /* ProjectsView.swift */; };
+		38D35D45277CF57F002A9486 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D43277CF57F002A9486 /* ProjectsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		381BC048277C0A660055712F /* PortfolioishApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioishApp.swift; sourceTree = "<group>"; };
+		381BC049277C0A660055712F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		381BC04A277C0A670055712F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		381BC04F277C0A670055712F /* Portfolioish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Portfolioish.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		381BC055277C0A670055712F /* Portfolioish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Portfolioish.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		381BC057277C0A670055712F /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		381BC067277C0D5E0055712F /* Portfolioish.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Portfolioish.xcdatamodel; sourceTree = "<group>"; };
+		381BC06A277C137E0055712F /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		381BC06D277C1FFF0055712F /* Portfolioish (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Portfolioish (iOS).entitlements"; sourceTree = "<group>"; };
+		381BC06E277C20050055712F /* Portfolioish--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Portfolioish--iOS--Info.plist"; sourceTree = "<group>"; };
+		381BC070277C20940055712F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		38D35D40277CF4C7002A9486 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		38D35D43277CF57F002A9486 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		381BC04C277C0A670055712F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				381BC071277C20940055712F /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		381BC052277C0A670055712F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		381BC042277C0A660055712F = {
+			isa = PBXGroup;
+			children = (
+				381BC06E277C20050055712F /* Portfolioish--iOS--Info.plist */,
+				381BC06D277C1FFF0055712F /* Portfolioish (iOS).entitlements */,
+				381BC047277C0A660055712F /* Shared */,
+				381BC056277C0A670055712F /* macOS */,
+				381BC050277C0A670055712F /* Products */,
+				381BC06F277C20940055712F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		381BC047277C0A660055712F /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				381BC048277C0A660055712F /* PortfolioishApp.swift */,
+				38D35D40277CF4C7002A9486 /* HomeView.swift */,
+				38D35D43277CF57F002A9486 /* ProjectsView.swift */,
+				381BC049277C0A660055712F /* ContentView.swift */,
+				381BC066277C0D5E0055712F /* Portfolioish.xcdatamodeld */,
+				381BC04A277C0A670055712F /* Assets.xcassets */,
+				381BC06A277C137E0055712F /* PersistenceController.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		381BC050277C0A670055712F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				381BC04F277C0A670055712F /* Portfolioish.app */,
+				381BC055277C0A670055712F /* Portfolioish.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		381BC056277C0A670055712F /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				381BC057277C0A670055712F /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		381BC06F277C20940055712F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				381BC070277C20940055712F /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		381BC04E277C0A670055712F /* Portfolioish (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 381BC060277C0A670055712F /* Build configuration list for PBXNativeTarget "Portfolioish (iOS)" */;
+			buildPhases = (
+				381BC04B277C0A670055712F /* Sources */,
+				381BC04C277C0A670055712F /* Frameworks */,
+				381BC04D277C0A670055712F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Portfolioish (iOS)";
+			productName = "Portfolioish (iOS)";
+			productReference = 381BC04F277C0A670055712F /* Portfolioish.app */;
+			productType = "com.apple.product-type.application";
+		};
+		381BC054277C0A670055712F /* Portfolioish (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 381BC063277C0A670055712F /* Build configuration list for PBXNativeTarget "Portfolioish (macOS)" */;
+			buildPhases = (
+				381BC051277C0A670055712F /* Sources */,
+				381BC052277C0A670055712F /* Frameworks */,
+				381BC053277C0A670055712F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Portfolioish (macOS)";
+			productName = "Portfolioish (macOS)";
+			productReference = 381BC055277C0A670055712F /* Portfolioish.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		381BC043277C0A660055712F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					381BC04E277C0A670055712F = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					381BC054277C0A670055712F = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 381BC046277C0A660055712F /* Build configuration list for PBXProject "Portfolioish" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 381BC042277C0A660055712F;
+			productRefGroup = 381BC050277C0A670055712F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				381BC04E277C0A670055712F /* Portfolioish (iOS) */,
+				381BC054277C0A670055712F /* Portfolioish (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		381BC04D277C0A670055712F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				381BC05C277C0A670055712F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		381BC053277C0A670055712F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				381BC05D277C0A670055712F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		381BC04B277C0A670055712F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38D35D44277CF57F002A9486 /* ProjectsView.swift in Sources */,
+				381BC05A277C0A670055712F /* ContentView.swift in Sources */,
+				381BC068277C0D5E0055712F /* Portfolioish.xcdatamodeld in Sources */,
+				381BC058277C0A670055712F /* PortfolioishApp.swift in Sources */,
+				38D35D41277CF4C7002A9486 /* HomeView.swift in Sources */,
+				381BC06B277C137E0055712F /* PersistenceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		381BC051277C0A670055712F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38D35D45277CF57F002A9486 /* ProjectsView.swift in Sources */,
+				381BC05B277C0A670055712F /* ContentView.swift in Sources */,
+				381BC069277C0D5E0055712F /* Portfolioish.xcdatamodeld in Sources */,
+				381BC059277C0A670055712F /* PortfolioishApp.swift in Sources */,
+				38D35D42277CF4C7002A9486 /* HomeView.swift in Sources */,
+				381BC06C277C137E0055712F /* PersistenceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		381BC05E277C0A670055712F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		381BC05F277C0A670055712F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		381BC061277C0A670055712F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Portfolioish (iOS).entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V3N8JZ2T92;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Portfolioish--iOS--Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.deirdre.Portfolioish;
+				PRODUCT_NAME = Portfolioish;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		381BC062277C0A670055712F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Portfolioish (iOS).entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V3N8JZ2T92;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Portfolioish--iOS--Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.deirdre.Portfolioish;
+				PRODUCT_NAME = Portfolioish;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		381BC064277C0A670055712F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V3N8JZ2T92;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.deirdre.Portfolioish;
+				PRODUCT_NAME = Portfolioish;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		381BC065277C0A670055712F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V3N8JZ2T92;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.deirdre.Portfolioish;
+				PRODUCT_NAME = Portfolioish;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		381BC046277C0A660055712F /* Build configuration list for PBXProject "Portfolioish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				381BC05E277C0A670055712F /* Debug */,
+				381BC05F277C0A670055712F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		381BC060277C0A670055712F /* Build configuration list for PBXNativeTarget "Portfolioish (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				381BC061277C0A670055712F /* Debug */,
+				381BC062277C0A670055712F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		381BC063277C0A670055712F /* Build configuration list for PBXNativeTarget "Portfolioish (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				381BC064277C0A670055712F /* Debug */,
+				381BC065277C0A670055712F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		381BC066277C0D5E0055712F /* Portfolioish.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				381BC067277C0D5E0055712F /* Portfolioish.xcdatamodel */,
+			);
+			currentVersion = 381BC067277C0D5E0055712F /* Portfolioish.xcdatamodel */;
+			path = Portfolioish.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 381BC043277C0A660055712F /* Project object */;
+}
