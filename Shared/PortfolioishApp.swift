@@ -21,6 +21,15 @@ struct PortfolioishApp: App {
             ContentView()
 				.environment(\.managedObjectContext, persistence.container.viewContext)
 				.environmentObject(persistence)
+			#if os(macOS)
+				.onReceive(NotificationCenter.default.publisher(for: NSApplication.willResignActiveNotification), perform: save)
+			#else
+				.onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification), perform: save)
+			#endif
         }
     }
+
+	func save(_ note: Notification) {
+		persistence.save()
+	}
 }

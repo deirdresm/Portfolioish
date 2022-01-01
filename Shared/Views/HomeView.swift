@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+	static let tag: String? = "Home"
 	@EnvironmentObject var persistence: PersistenceController
 
 	var body: some View {
