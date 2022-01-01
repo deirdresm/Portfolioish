@@ -20,6 +20,8 @@
 		381BC071277C20940055712F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381BC070277C20940055712F /* CloudKit.framework */; };
 		386ED795277FF71C00495560 /* Sequence+Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386ED794277FF71C00495560 /* Sequence+Sorting.swift */; };
 		386ED796277FF71C00495560 /* Sequence+Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386ED794277FF71C00495560 /* Sequence+Sorting.swift */; };
+		386ED7982780326600495560 /* SelectSomethingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386ED7972780326600495560 /* SelectSomethingView.swift */; };
+		386ED7992780326600495560 /* SelectSomethingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386ED7972780326600495560 /* SelectSomethingView.swift */; };
 		38D35D41277CF4C7002A9486 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D40277CF4C7002A9486 /* HomeView.swift */; };
 		38D35D42277CF4C7002A9486 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D40277CF4C7002A9486 /* HomeView.swift */; };
 		38D35D44277CF57F002A9486 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D43277CF57F002A9486 /* ProjectsView.swift */; };
@@ -51,6 +53,7 @@
 		381BC06E277C20050055712F /* Portfolioish--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Portfolioish--iOS--Info.plist"; sourceTree = "<group>"; };
 		381BC070277C20940055712F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		386ED794277FF71C00495560 /* Sequence+Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Sorting.swift"; sourceTree = "<group>"; };
+		386ED7972780326600495560 /* SelectSomethingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSomethingView.swift; sourceTree = "<group>"; };
 		38D35D40277CF4C7002A9486 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		38D35D43277CF57F002A9486 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 		38D35D47277D0DD1002A9486 /* Item+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+Extension.swift"; sourceTree = "<group>"; };
@@ -155,6 +158,7 @@
 				38D35D54277E3E89002A9486 /* ProjectHeaderView.swift */,
 				38D35D40277CF4C7002A9486 /* HomeView.swift */,
 				38D35D43277CF57F002A9486 /* ProjectsView.swift */,
+				386ED7972780326600495560 /* SelectSomethingView.swift */,
 				381BC049277C0A660055712F /* ContentView.swift */,
 				38D35D4D277D339F002A9486 /* EditItemView.swift */,
 				38D35D58277E410A002A9486 /* EditProjectView.swift */,
@@ -263,6 +267,7 @@
 				38D35D44277CF57F002A9486 /* ProjectsView.swift in Sources */,
 				386ED795277FF71C00495560 /* Sequence+Sorting.swift in Sources */,
 				38D35D4B277D1A25002A9486 /* Project+Extension.swift in Sources */,
+				386ED7982780326600495560 /* SelectSomethingView.swift in Sources */,
 				38D35D48277D0DD1002A9486 /* Item+Extension.swift in Sources */,
 				381BC05A277C0A670055712F /* ContentView.swift in Sources */,
 				38D35D55277E3E89002A9486 /* ProjectHeaderView.swift in Sources */,
@@ -283,6 +288,7 @@
 				38D35D45277CF57F002A9486 /* ProjectsView.swift in Sources */,
 				386ED796277FF71C00495560 /* Sequence+Sorting.swift in Sources */,
 				38D35D4C277D1A25002A9486 /* Project+Extension.swift in Sources */,
+				386ED7992780326600495560 /* SelectSomethingView.swift in Sources */,
 				38D35D49277D0DD1002A9486 /* Item+Extension.swift in Sources */,
 				381BC05B277C0A670055712F /* ContentView.swift in Sources */,
 				38D35D56277E3E89002A9486 /* ProjectHeaderView.swift in Sources */,

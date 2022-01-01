@@ -15,7 +15,6 @@ struct ProjectsView: View {
 	static let closedTag: String? = "Closed"
 
 	@State private var showingSortOrder = false
-//	@State private var sortOrder = Item.SortOrder.optimized
 	@State var sortDescriptor: NSSortDescriptor?
 
 	let showClosedProjects: Bool
@@ -30,43 +29,50 @@ struct ProjectsView: View {
 
     var body: some View {
 		NavigationView {
-			List {
-				ForEach(projects.wrappedValue) { project in
-					Section(header: ProjectHeaderView(project: project)) {
-						ForEach(items(for: project)) { item in
-							ItemRowView(item: item)
-						}
-						.onDelete { offsets in
-							let allItems = project.projectItems
+			Group {
+				if projects.wrappedValue.isEmpty {
+					Text("There's nothing here right now.")
+						.foregroundColor(.secondary)
+				} else {
+					List {
+						ForEach(projects.wrappedValue) { project in
+							Section(header: ProjectHeaderView(project: project)) {
+								ForEach(items(for: project)) { item in
+									ItemRowView(project: project, item: item)
+								}
+								.onDelete { offsets in
+									let allItems = items(for: project)
 
-							for offset in offsets {
-								let item = allItems[offset]
-								persistence.delete(item)
-							}
+									for offset in offsets {
+										let item = allItems[offset]
+										persistence.delete(item)
+									}
 
-							persistence.save()
-						}
-
-						if showClosedProjects == false {
-							Button {
-								withAnimation {
-									let item = Item(context: managedObjectContext)
-									item.project = project
-									item.createdOn = Date()
 									persistence.save()
 								}
-							} label: {
-								Label("Add New Item", systemImage: "plus")
+
+								if showClosedProjects == false {
+									Button {
+										withAnimation {
+											let item = Item(context: managedObjectContext)
+											item.project = project
+											item.createdOn = Date()
+											persistence.save()
+										}
+									} label: {
+										Label("Add New Item", systemImage: "plus")
+									}
+								}
 							}
 						}
-					}
+					} // List
+#if os(macOS)
+						.listStyle(.inset)
+#else
+						.listStyle(.insetGrouped)
+#endif
 				}
 			}
-#if os(macOS)
-			.listStyle(.inset)
-#else
-			.listStyle(.insetGrouped)
-#endif
 			.navigationTitle(showClosedProjects ? "Closed Projects" : "Open Projects")
 			.toolbar {
 				ToolbarItem(placement: .navigationBarTrailing) {
@@ -82,7 +88,7 @@ struct ProjectsView: View {
 							Label("Add Project", systemImage: "plus")
 						}
 					}
-				}
+				} // ToolbarItem
 
 
 				ToolbarItem(placement: .navigationBarLeading) {
@@ -91,19 +97,20 @@ struct ProjectsView: View {
 					} label: {
 						Label("Sort", systemImage: "arrow.up.arrow.down")
 					}
-				}
-			}
-			#if os(iOS)
+				} // ToolbarItem
+			} // .toolbar
+#if os(iOS)
 			.actionSheet(isPresented: $showingSortOrder) {
 				ActionSheet(title: Text("Sort items"), message: nil, buttons: [
 					.default(Text("Optimized")) { sortDescriptor = nil },
 					.default(Text("Created On")) { sortDescriptor = NSSortDescriptor(keyPath: \Item.createdOn, ascending: false) },
 					.default(Text("Title")) { sortDescriptor = NSSortDescriptor(keyPath: \Item.title, ascending: true) }
-				])
-			}
-			#endif
+				]) // ActionSheet
+			} // .actionSheet
+#endif
+			SelectSomethingView()
 		}
-    }
+	}
 
 	func items(for project: Project) -> [Item] {
 		guard let sortDescriptor = sortDescriptor else {
