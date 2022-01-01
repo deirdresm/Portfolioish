@@ -69,16 +69,27 @@ struct ProjectsView: View {
 #endif
 			.navigationTitle(showClosedProjects ? "Closed Projects" : "Open Projects")
 			.toolbar {
-				if showClosedProjects == false {
-					Button {
-						withAnimation {
-							let project = Project(context: managedObjectContext)
-							project.closed = false
-							project.createdOn = Date()
-							persistence.save()
+				ToolbarItem(placement: .navigationBarTrailing) {
+					if showClosedProjects == false {
+						Button {
+							withAnimation {
+								let project = Project(context: managedObjectContext)
+								project.closed = false
+								project.createdOn = Date()
+								persistence.save()
+							}
+						} label: {
+							Label("Add Project", systemImage: "plus")
 						}
+					}
+				}
+
+
+				ToolbarItem(placement: .navigationBarLeading) {
+					Button {
+						showingSortOrder.toggle()
 					} label: {
-						Label("Add Project", systemImage: "plus")
+						Label("Sort", systemImage: "arrow.up.arrow.down")
 					}
 				}
 			}
