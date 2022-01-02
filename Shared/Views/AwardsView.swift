@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct AwardsView: View {
+	@EnvironmentObject var persistence: PersistenceController
+
+	@State private var selectedAward = Award.example
+	@State private var showingAwardDetails = false
+
 	static let tag: String? = "Awards"
 
 	var columns: [GridItem] {
@@ -27,18 +32,32 @@ struct AwardsView: View {
 								.scaledToFit()
 								.padding()
 								.frame(width: 100, height: 100)
-								.foregroundColor(Color.secondary.opacity(0.5))
+								.foregroundColor(persistence.hasEarned(award: award) ? Color(award.color) : Color.secondary.opacity(0.5))
 						}
 					}
 				}
 			}
 			.navigationTitle("Awards")
 		}
+		.alert(isPresented: $showingAwardDetails) {
+			if persistence.hasEarned(award: selectedAward) {
+				return Alert(title: Text("Unlocked: \(selectedAward.name)"),
+					message: Text("\(selectedAward.description)"),
+					dismissButton: .default(Text("OK")))
+			} else {
+				return Alert(title: Text("Locked"),
+					message: Text("\(selectedAward.description)"),
+					dismissButton: .default(Text("OK")))
+			}
+		}
     }
 }
 
 struct AwardsView_Previews: PreviewProvider {
+	static var persistence = PersistenceController.preview
+
     static var previews: some View {
         AwardsView()
+			.environmentObject(persistence)
     }
 }
