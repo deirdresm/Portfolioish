@@ -46,6 +46,8 @@
 		38D35D56277E3E89002A9486 /* ProjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D54277E3E89002A9486 /* ProjectHeaderView.swift */; };
 		38D35D59277E410A002A9486 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D58277E410A002A9486 /* EditProjectView.swift */; };
 		38D35D5A277E410A002A9486 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D58277E410A002A9486 /* EditProjectView.swift */; };
+		38E860E027819F6700F92B6C /* Color+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E860DF27819F6700F92B6C /* Color+Additions.swift */; };
+		38E860E127819F6800F92B6C /* Color+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E860DF27819F6700F92B6C /* Color+Additions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,7 @@
 		38D35D50277D3B6A002A9486 /* Binding+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extension.swift"; sourceTree = "<group>"; };
 		38D35D54277E3E89002A9486 /* ProjectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHeaderView.swift; sourceTree = "<group>"; };
 		38D35D58277E410A002A9486 /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
+		38E860DF27819F6700F92B6C /* Color+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +174,7 @@
 				38D35D50277D3B6A002A9486 /* Binding+Extension.swift */,
 				386ED79A278037DB00495560 /* Bundle-Decodable.swift */,
 				386ED794277FF71C00495560 /* Sequence+Sorting.swift */,
+				38E860DF27819F6700F92B6C /* Color+Additions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -297,6 +301,7 @@
 				386ED7982780326600495560 /* SelectSomethingView.swift in Sources */,
 				386ED7A227812B1900495560 /* Award.swift in Sources */,
 				386ED7A52781645700495560 /* AwardsView.swift in Sources */,
+				38E860E027819F6700F92B6C /* Color+Additions.swift in Sources */,
 				38D35D48277D0DD1002A9486 /* Item+Extension.swift in Sources */,
 				381BC05A277C0A670055712F /* ContentView.swift in Sources */,
 				38D35D55277E3E89002A9486 /* ProjectHeaderView.swift in Sources */,
@@ -321,6 +326,7 @@
 				386ED7992780326600495560 /* SelectSomethingView.swift in Sources */,
 				386ED7A327812B1900495560 /* Award.swift in Sources */,
 				386ED7A62781645700495560 /* AwardsView.swift in Sources */,
+				38E860E127819F6800F92B6C /* Color+Additions.swift in Sources */,
 				38D35D49277D0DD1002A9486 /* Item+Extension.swift in Sources */,
 				381BC05B277C0A670055712F /* ContentView.swift in Sources */,
 				38D35D56277E3E89002A9486 /* ProjectHeaderView.swift in Sources */,
