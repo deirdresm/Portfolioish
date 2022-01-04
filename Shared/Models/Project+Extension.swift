@@ -24,6 +24,10 @@ extension Project {
 		color ?? "Light Blue"
 	}
 
+	var label: LocalizedStringKey {
+		LocalizedStringKey("\(projectTitle), \(projectItems.count) items, \(completionAmount * 100, specifier: "%g")% complete.")
+	}
+
 	static var example: Project {
 		let controller = PersistenceController(inMemory: true)
 		let viewContext = controller.container.viewContext

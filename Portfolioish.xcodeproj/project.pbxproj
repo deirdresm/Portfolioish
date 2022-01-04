@@ -18,6 +18,10 @@
 		381BC06B277C137E0055712F /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BC06A277C137E0055712F /* PersistenceController.swift */; };
 		381BC06C277C137E0055712F /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BC06A277C137E0055712F /* PersistenceController.swift */; };
 		381BC071277C20940055712F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381BC070277C20940055712F /* CloudKit.framework */; };
+		385E93CE27842130007C1ADC /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E93CD27842130007C1ADC /* ItemListView.swift */; };
+		385E93CF27842130007C1ADC /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E93CD27842130007C1ADC /* ItemListView.swift */; };
+		385E93D1278421A5007C1ADC /* ProjectSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E93D0278421A5007C1ADC /* ProjectSummaryView.swift */; };
+		385E93D2278421A5007C1ADC /* ProjectSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E93D0278421A5007C1ADC /* ProjectSummaryView.swift */; };
 		386ED795277FF71C00495560 /* Sequence+Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386ED794277FF71C00495560 /* Sequence+Sorting.swift */; };
 		386ED796277FF71C00495560 /* Sequence+Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386ED794277FF71C00495560 /* Sequence+Sorting.swift */; };
 		386ED7982780326600495560 /* SelectSomethingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386ED7972780326600495560 /* SelectSomethingView.swift */; };
@@ -66,6 +70,8 @@
 		381BC06D277C1FFF0055712F /* Portfolioish (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Portfolioish (iOS).entitlements"; sourceTree = "<group>"; };
 		381BC06E277C20050055712F /* Portfolioish--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Portfolioish--iOS--Info.plist"; sourceTree = "<group>"; };
 		381BC070277C20940055712F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		385E93CD27842130007C1ADC /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
+		385E93D0278421A5007C1ADC /* ProjectSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSummaryView.swift; sourceTree = "<group>"; };
 		386ED794277FF71C00495560 /* Sequence+Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Sorting.swift"; sourceTree = "<group>"; };
 		386ED7972780326600495560 /* SelectSomethingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSomethingView.swift; sourceTree = "<group>"; };
 		386ED79A278037DB00495560 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Bundle-Decodable.swift"; path = "Shared/Extensions/Bundle-Decodable.swift"; sourceTree = SOURCE_ROOT; };
@@ -194,6 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				38D35D40277CF4C7002A9486 /* HomeView.swift */,
+				385E93D0278421A5007C1ADC /* ProjectSummaryView.swift */,
+				385E93CD27842130007C1ADC /* ItemListView.swift */,
 				38D35D54277E3E89002A9486 /* ProjectHeaderView.swift */,
 				38D35D43277CF57F002A9486 /* ProjectsView.swift */,
 				386ED7972780326600495560 /* SelectSomethingView.swift */,
@@ -315,11 +323,13 @@
 				386ED79B278037DB00495560 /* Bundle-Decodable.swift in Sources */,
 				38D35D4B277D1A25002A9486 /* Project+Extension.swift in Sources */,
 				386ED7982780326600495560 /* SelectSomethingView.swift in Sources */,
+				385E93CE27842130007C1ADC /* ItemListView.swift in Sources */,
 				386ED7A227812B1900495560 /* Award.swift in Sources */,
 				386ED7A52781645700495560 /* AwardsView.swift in Sources */,
 				38E860E027819F6700F92B6C /* Color+Additions.swift in Sources */,
 				38D35D48277D0DD1002A9486 /* Item+Extension.swift in Sources */,
 				381BC05A277C0A670055712F /* ContentView.swift in Sources */,
+				385E93D1278421A5007C1ADC /* ProjectSummaryView.swift in Sources */,
 				38D35D55277E3E89002A9486 /* ProjectHeaderView.swift in Sources */,
 				381BC068277C0D5E0055712F /* Portfolioish.xcdatamodeld in Sources */,
 				381BC058277C0A670055712F /* PortfolioishApp.swift in Sources */,
@@ -340,11 +350,13 @@
 				386ED79C278037DB00495560 /* Bundle-Decodable.swift in Sources */,
 				38D35D4C277D1A25002A9486 /* Project+Extension.swift in Sources */,
 				386ED7992780326600495560 /* SelectSomethingView.swift in Sources */,
+				385E93CF27842130007C1ADC /* ItemListView.swift in Sources */,
 				386ED7A327812B1900495560 /* Award.swift in Sources */,
 				386ED7A62781645700495560 /* AwardsView.swift in Sources */,
 				38E860E127819F6800F92B6C /* Color+Additions.swift in Sources */,
 				38D35D49277D0DD1002A9486 /* Item+Extension.swift in Sources */,
 				381BC05B277C0A670055712F /* ContentView.swift in Sources */,
+				385E93D2278421A5007C1ADC /* ProjectSummaryView.swift in Sources */,
 				38D35D56277E3E89002A9486 /* ProjectHeaderView.swift in Sources */,
 				381BC069277C0D5E0055712F /* Portfolioish.xcdatamodeld in Sources */,
 				381BC059277C0A670055712F /* PortfolioishApp.swift in Sources */,

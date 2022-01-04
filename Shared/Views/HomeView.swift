@@ -39,40 +39,24 @@ struct HomeView: View {
 				VStack(alignment: .leading) {
 					ScrollView(.horizontal, showsIndicators: false) {
 						LazyHGrid(rows: projectRows) {
-							ForEach(projects) { project in
-								VStack(alignment: .leading) {
-									Text("\(project.projectItems.count) items")
-										.font(.caption)
-										.foregroundColor(.secondary)
-
-									Text(project.projectTitle)
-										.font(.title2)
-
-									ProgressView(value: project.completionAmount)
-										.accentColor(Color(project.projectColor))
-								}
-								.padding()
-								.background(Color.secondarySystemGroupedBackground)
-								.cornerRadius(10)
-								.shadow(color: Color.black.opacity(0.2), radius: 5)
-								.accessibilityElement(children: .ignore)
-								.accessibilityLabel("j\(project.projectTitle), \(project.projectItems.count) items), \(project.completionAmount * 100, specifier: "%g")% complete.")
-							}
+							ForEach(projects, content: ProjectSummaryView.init)
 						}
-						.padding([.horizontal, .top])
-						.fixedSize(horizontal: false, vertical: true)
 					}
-
-					VStack(alignment: .leading) {
-						list("Up Next", for: items.wrappedValue.prefix(3))
-						list("More to Explore", for: items.wrappedValue.dropFirst(3))
-					}
-					.padding(.horizontal)
+					.padding([.horizontal, .top])
+					.fixedSize(horizontal: false, vertical: true)
 				}
+
+				VStack(alignment: .leading) {
+					VStack(alignment: .leading) {
+						ItemListView(title: "Up next", items: items.wrappedValue.prefix(3))
+						ItemListView(title: "More to explore", items: items.wrappedValue.dropFirst(3))
+					}
+				}
+				.padding(.horizontal)
 			}
-			.background(Color.systemGroupedBackground.ignoresSafeArea())
-			.navigationTitle("Home")
 		}
+		.background(Color.systemGroupedBackground.ignoresSafeArea())
+		.navigationTitle("Home")
 	}
 
 	@ViewBuilder func list(_ title: LocalizedStringKey, for items: FetchedResults<Item>.SubSequence) -> some View {
@@ -109,7 +93,9 @@ struct HomeView: View {
 				}
 			}
 		}
-	}}
+	}
+}
+
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
