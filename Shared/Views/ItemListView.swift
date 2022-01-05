@@ -48,11 +48,11 @@ struct ItemListView: View {
     }
 }
 
-//struct ItemListView_Previews: PreviewProvider {
+// struct ItemListView_Previews: PreviewProvider {
 //	static var title: String = "Up next"
 //	static var items: FetchedResults<Item>.SubSequence
 //
 //    static var previews: some View {
 //		ItemListView(title: title, items: items.wrappedValue.prefix(3))
 //    }
-//}
+// }

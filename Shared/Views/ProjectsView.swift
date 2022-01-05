@@ -5,6 +5,7 @@
 //  Created by Deirdre Saoirse Moen on 12/29/21.
 //
 
+import CoreData
 import SwiftUI
 
 struct ProjectsView: View {
@@ -23,7 +24,8 @@ struct ProjectsView: View {
 	init(showClosedProjects: Bool) {
 		self.showClosedProjects = showClosedProjects
 
-		projects = FetchRequest<Project>(entity: Project.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Project.createdOn, ascending: false)],
+		projects = FetchRequest<Project>(entity: Project.entity(),
+			sortDescriptors: [NSSortDescriptor(keyPath: \Project.createdOn, ascending: false)],
 			predicate: NSPredicate(format: "closed = %d", showClosedProjects))
 	}
 
