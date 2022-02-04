@@ -31,7 +31,7 @@ extension Project {
 	}
 
 	static var example: Project {
-		let controller = PersistenceController(inMemory: true)
+		let controller = Persistence.preview
 		let viewContext = controller.container.viewContext
 
 		let project = Project(context: viewContext)

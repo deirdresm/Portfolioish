@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EditItemView: View {
-	@EnvironmentObject var persistence: PersistenceController
+	@EnvironmentObject var persistence: Persistence
 	let item: Item
 
 	@State private var title: String
@@ -99,7 +99,7 @@ struct ItemRowView: View {
 }
 
 struct EditItemView_Previews: PreviewProvider {
-	static var persistence = PersistenceController.preview
+	static var persistence = Persistence.preview
 
     static var previews: some View {
         EditItemView(item: Item.example)

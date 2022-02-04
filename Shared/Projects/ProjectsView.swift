@@ -9,47 +9,37 @@ import CoreData
 import SwiftUI
 
 struct ProjectsView: View {
-	@EnvironmentObject var persistence: PersistenceController
-	@Environment(\.managedObjectContext) var managedObjectContext
+
+	@StateObject var viewModel: ViewModel
+	@State private var showingSortOrder = false
 
 	static let openTag: String? = "Open"
 	static let closedTag: String? = "Closed"
 
-	@State private var showingSortOrder = false
-	@State var sortDescriptor: NSSortDescriptor?
-
-	let showClosedProjects: Bool
-	let projects: FetchRequest<Project>
-
-	init(showClosedProjects: Bool) {
-		self.showClosedProjects = showClosedProjects
-
-		projects = FetchRequest<Project>(entity: Project.entity(),
-			sortDescriptors: [NSSortDescriptor(keyPath: \Project.createdOn, ascending: false)],
-			predicate: NSPredicate(format: "closed = %d", showClosedProjects))
-	}
-
     var body: some View {
 		NavigationView {
 			Group {
-				if projects.wrappedValue.isEmpty {
+				if viewModel.projects.isEmpty {
 					Text("There's nothing here right now.")
 						.foregroundColor(.secondary)
 				} else {
 					projectsList
 				}
 			}
-			.navigationTitle(showClosedProjects ? "Closed Projects" : "Open Projects")
+			.navigationTitle(viewModel.showClosedProjects ? "Closed Projects" : "Open Projects")
 			.toolbar {
 				addProjectToolbarItem
+#if DEBUG
+				resetDBToolbarItem
+#endif
 				sortOrderToolbarItem
 			}
 #if os(iOS)
 			.actionSheet(isPresented: $showingSortOrder) {
 				ActionSheet(title: Text("Sort items"), message: nil, buttons: [
-					.default(Text("Optimized")) { sortDescriptor = nil },
-					.default(Text("Created On")) { sortDescriptor = NSSortDescriptor(keyPath: \Item.createdOn, ascending: false) },
-					.default(Text("Title")) { sortDescriptor = NSSortDescriptor(keyPath: \Item.title, ascending: true) }
+					.default(Text("Optimized")) { viewModel.sortDescriptor = nil },
+					.default(Text("Created On")) { viewModel.sortDescriptor = NSSortDescriptor(keyPath: \Item.createdOn, ascending: false) },
+					.default(Text("Title")) { viewModel.sortDescriptor = NSSortDescriptor(keyPath: \Item.title, ascending: true) }
 				]) // ActionSheet
 			} // .actionSheet
 #endif
@@ -57,56 +47,22 @@ struct ProjectsView: View {
 		}
 	}
 
-	func items(for project: Project) -> [Item] {
-		guard let sortDescriptor = sortDescriptor else {
-			return project.projectItemsDefaultSorted
-		}
-		return project.projectItems.sorted(by: sortDescriptor)
-	}
-
-	func addItem(to project: Project) {
-		withAnimation {
-			let item = Item(context: managedObjectContext)
-			item.project = project
-			item.createdOn = Date()
-			persistence.save()
-		}
-	}
-
-	func delete(_ offsets: IndexSet, from project: Project) {
-		let allItems = items(for: project)
-
-		for offset in offsets {
-			let item = allItems[offset]
-			persistence.delete(item)
-		}
-
-		persistence.save()
-	}
-
-	func addProject() {
-		withAnimation {
-			let project = Project(context: managedObjectContext)
-			project.closed = false
-			project.createdOn = Date()
-			persistence.save()
-		}
-	}
-
 	var projectsList: some View {
 		List {
-			ForEach(projects.wrappedValue) { project in
+			ForEach(viewModel.projects) { project in
 				Section(header: ProjectHeaderView(project: project)) {
-					ForEach(items(for: project)) { item in
+					ForEach(viewModel.items(for: project)) { item in
 						ItemRowView(project: project, item: item)
 					}
 					.onDelete { offsets in
-						delete(offsets, from: project)
+						viewModel.delete(offsets, from: project)
 					}
 
-					if showClosedProjects == false {
+					if viewModel.showClosedProjects == false {
 						Button {
-							addItem(to: project)
+							withAnimation {
+								viewModel.addItem(to: project)
+							}
 						} label: {
 							Label("Add New Item", systemImage: "plus")
 						}
@@ -121,17 +77,38 @@ struct ProjectsView: View {
 #endif
 	}
 
+#if DEBUG
+	var resetDBToolbarItem: some ToolbarContent {
+		ToolbarItem(placement: .navigationBarTrailing) {
+			Button {
+				viewModel.deleteAll()
+			} label: {
+
+				if UIAccessibility.isVoiceOverRunning {
+					Text("Reset")
+				} else {
+					Label("Reset", systemImage: "-")
+				}
+			}
+		}
+	}
+#endif
+
 	var addProjectToolbarItem: some ToolbarContent {
 		ToolbarItem(placement: .navigationBarTrailing) {
-			if showClosedProjects == false {
+			if viewModel.showClosedProjects == false {
+				Button {
+//					withAnimation {
+						viewModel.addProject()
+//					}
+				} label: {
 
-				// WORKAROUND: In iOS 14.3 VoiceOver has a glitch that reads the
-				// label "Add Project" as "Add" no matter what accessibility label
-				// we give this button when using a label. As a result, when
-				// VoiceOver is running we use a text view for the button instead,
-				// forcing a correct reading without losing the original layout.
+					// WORKAROUND: In iOS 14.3 VoiceOver has a glitch that reads the
+					// label "Add Project" as "Add" no matter what accessibility label
+					// we give this button when using a label. As a result, when
+					// VoiceOver is running we use a text view for the button instead,
+					// forcing a correct reading without losing the original layout.
 
-				Button(action: addProject) {
 					if UIAccessibility.isVoiceOverRunning {
 						Text("Add Project")
 					} else {
@@ -145,19 +122,24 @@ struct ProjectsView: View {
 	var sortOrderToolbarItem: some ToolbarContent {
 		ToolbarItem(placement: .navigationBarLeading) {
 			Button {
-				showingSortOrder.toggle()
+				viewModel.showingSortOrder.toggle()
 			} label: {
 				Label("Sort", systemImage: "arrow.up.arrow.down")
 			}
 		}
-	}}
+	}
+
+	init(persistence: Persistence, showClosedProjects: Bool) {
+		let viewModel = ViewModel(persistence: persistence, showClosedProjects: showClosedProjects)
+		_viewModel = StateObject(wrappedValue: viewModel)
+	}
+}
 
 struct ProjectsView_Previews: PreviewProvider {
-	static var persistence = PersistenceController.preview
+	static var persistence = Persistence.preview
 
     static var previews: some View {
-        ProjectsView(showClosedProjects: false)
+		ProjectsView(persistence: Persistence.preview, showClosedProjects: false)
 			.environment(\.managedObjectContext, persistence.container.viewContext)
-			.environmentObject(persistence)
     }
 }

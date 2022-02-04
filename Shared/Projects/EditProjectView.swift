@@ -10,7 +10,7 @@ import SwiftUI
 struct EditProjectView: View {
 	let project: Project
 
-	@EnvironmentObject var persistence: PersistenceController
+	@EnvironmentObject var persistence: Persistence
 
 	@Environment(\.presentationMode) var presentationMode
 
@@ -106,7 +106,7 @@ struct EditProjectView: View {
 }
 
 struct EditProjectView_Previews: PreviewProvider {
-	static var persistence = PersistenceController.preview
+	static var persistence = Persistence.preview
 
 	static var previews: some View {
 		EditProjectView(project: Project.example)

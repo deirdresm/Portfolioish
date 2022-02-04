@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AwardsView: View {
-	@EnvironmentObject var persistence: PersistenceController
+	@EnvironmentObject var persistence: Persistence
 
 	@State private var selectedAward = Award.example
 	@State private var showingAwardDetails = false
@@ -63,7 +63,7 @@ struct AwardsView: View {
 }
 
 struct AwardsView_Previews: PreviewProvider {
-	static var persistence = PersistenceController.preview
+	static var persistence = Persistence.preview
 
     static var previews: some View {
         AwardsView()

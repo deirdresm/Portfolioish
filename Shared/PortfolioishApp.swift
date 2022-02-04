@@ -9,10 +9,10 @@ import SwiftUI
 
 @main
 struct PortfolioishApp: App {
-	@StateObject var persistence: PersistenceController
+	@StateObject var persistence: Persistence
 
 	init() {
-		let persistence = PersistenceController()
+		let persistence = Persistence()
 		_persistence = StateObject(wrappedValue: persistence)
 	}
 
