@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreHaptics
 
 struct EditProjectView: View {
 	@ObservedObject var project: Project
@@ -17,6 +18,8 @@ struct EditProjectView: View {
 	@State private var title: String
 	@State private var detail: String
 	@State private var color: String
+
+	@State private var hapticEngine = try? CHHapticEngine()
 
 	@State private var showingDeleteConfirm = false
 
@@ -43,6 +46,10 @@ struct EditProjectView: View {
 				Button(project.closed ? "Reopen this project" : "Close this project") {
 					project.closed.toggle()
 					update()
+
+					if project.closed {
+						UINotificationFeedbackGenerator().notificationOccurred(.success)
+					}
 				}
 
 				Button("Delete this project") {
@@ -66,6 +73,36 @@ struct EditProjectView: View {
 		_title = State(wrappedValue: project.projectTitle)
 		_detail = State(wrappedValue: project.projectDetail)
 		_color = State(wrappedValue: project.projectColor)
+	}
+
+	func toggleClosed() {
+		project.closed.toggle()
+
+	  if project.closed {
+		  // trigger haptics
+		  do {
+			  try hapticEngine?.start()
+			  let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 0)
+			  let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: 1)
+
+			  let start = CHHapticParameterCurve.ControlPoint(relativeTime: 0, value: 1)
+			  let end = CHHapticParameterCurve.ControlPoint(relativeTime: 1, value: 0)
+
+			  let parameter = CHHapticParameterCurve(parameterID: .hapticIntensityControl,
+													 controlPoints: [start, end],
+													 relativeTime: 0)
+			  let event1 = CHHapticEvent(eventType: .hapticTransient,
+									  parameters: [intensity, sharpness],
+									  relativeTime: 0)
+			  let event2 = CHHapticEvent(eventType: .hapticContinuous, parameters: [intensity, sharpness], relativeTime: 0.125, duration: 1)
+			  let pattern = try CHHapticPattern(events: [event1, event2], parameterCurves: [parameter])
+
+			  let player = try hapticEngine?.makePlayer(with: pattern)
+			  try player?.start(atTime: 0)
+		  } catch {
+
+		  }
+	  }
 	}
 
 	func update() {
