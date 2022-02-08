@@ -40,6 +40,13 @@ struct ContentView: View {
 					Image(systemName: "rosette")
 					Text("Awards")
 				}
+
+			Text("Reset")
+				.tag("Reset")
+				.tabItem {
+					Image(systemName: "trash.slash.fill")
+					Text("Reset")
+				}
 		}
     }
 }

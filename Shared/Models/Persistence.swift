@@ -38,13 +38,18 @@ class Persistence: ObservableObject {
 	/// - Parameter inMemory: Whether to store this data in temporary memory or not.
 
 	init(inMemory: Bool = false) {
+		var isTesting = inMemory
 		container = NSPersistentCloudKitContainer(name: "Portfolioish", managedObjectModel: Self.model)
 
 		// For testing and previewing purposes, we create a
 		// temporary, in-memory database by writing to /dev/null
 		// so preview/test data is destroyed after the app finishes running.
 
-		if inMemory {
+		if CommandLine.arguments.contains("enable-testing") {
+			isTesting = true
+		}
+
+		if inMemory || isTesting {
 			container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
 		}
 
@@ -62,7 +67,7 @@ class Persistence: ObservableObject {
 			}
 
 			#if DEBUG
-			if CommandLine.arguments.contains("enable-testing") {
+			if isTesting {
 				self.deleteAll()
 				UIView.setAnimationsEnabled(false)
 			}
@@ -118,7 +123,8 @@ class Persistence: ObservableObject {
 		let projectBatchDeleteRequest = NSBatchDeleteRequest(fetchRequest: projectFetchRequest)
 		_ = try? container.viewContext.execute(projectBatchDeleteRequest)
 
-		try? container.viewContext.save()
+		container.viewContext.reset() // reset the container so the view refreshes to the new context container
+//		try? container.viewContext.save()
 	}
 
 	/// Saves our Core Data context iff there are changes. This silently ignores

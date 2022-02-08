@@ -19,7 +19,7 @@ class PortfolioishiOSUITestsLaunchTests: XCTestCase {
 
     func testLaunch() throws {
         let app = XCUIApplication()
-		app.launchArguments = ["enable-testing"]
+		app.launchArguments.append("enable-testing")
         app.launch()
 
         // Insert steps here to perform after app launch but before taking a screenshot,

@@ -10,9 +10,16 @@ import SwiftUI
 @main
 struct PortfolioishApp: App {
 	@StateObject var persistence: Persistence
+	var isTesting: Bool
 
 	init() {
-		let persistence = Persistence()
+		isTesting = false
+
+		if CommandLine.arguments.contains("enable-testing") {
+			isTesting = true
+		}
+
+		let persistence = Persistence(inMemory: isTesting)
 		_persistence = StateObject(wrappedValue: persistence)
 	}
 

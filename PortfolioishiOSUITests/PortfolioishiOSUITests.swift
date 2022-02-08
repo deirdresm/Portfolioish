@@ -15,7 +15,7 @@ class PortfolioishiOSUITests: XCTestCase {
         continueAfterFailure = false
 
 		app = XCUIApplication()
-		app.launchArguments = ["enable-testing"]
+		app.launchArguments.append("enable-testing")
 		app.activate()
 		sleep(1)
 		print("app launched - \(app.launchArguments)")
@@ -26,12 +26,12 @@ class PortfolioishiOSUITests: XCTestCase {
     }
 
     func testExample() throws {
-		XCTAssertEqual(app.tabBars.buttons.count, 4, "There should be 4 tabs in the app.")
+		XCTAssertEqual(app.tabBars.buttons.count, 5, "There should be 4 tabs in the app.")
 	}
 
 	func testOpenTabAddsProjects() {
-		app.buttons["Open"].tap()
 		app.buttons["Reset"].tap()
+		app.buttons["Open"].tap()
 		XCTAssertEqual(app.tables.cells.count, 0, "There should be no initial project rows.")
 
 		for tapCount in 1...5 {
@@ -41,6 +41,7 @@ class PortfolioishiOSUITests: XCTestCase {
 	}
 
 	func testAddingItemInsertsRows() {
+		app.buttons["Reset"].tap()
 		app.buttons["Open"].tap()
 		XCTAssertEqual(app.tables.cells.count, 0, "There should be no list rows initially.")
 
@@ -54,15 +55,15 @@ class PortfolioishiOSUITests: XCTestCase {
 	func testEditingProjectUpdatesCorrectly() {
 		print("app launch arguments - \(app.launchArguments)")
 
-		app.buttons["Open"].tap()
 		app.buttons["Reset"].tap()
-		// TODO: fix the next line, which is flaky and shouldn't be.
+		app.buttons["Open"].tap()
 		XCTAssertEqual(app.tables.cells.count, 0, "There should be no list rows initially.")
 
 		app.buttons["Add Project"].tap()
 		XCTAssertEqual(app.tables.cells.count, 1, "There should be 1 list row after adding a project.")
 
-		app.buttons["New Project"].tap()
+//		app.buttons["New Project"].tap()
+		app.buttons["Edit Project"].tap()
 		app.textFields["Project name"].tap()
 
 		app.keys["space"].tap()

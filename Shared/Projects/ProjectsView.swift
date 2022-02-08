@@ -29,9 +29,9 @@ struct ProjectsView: View {
 			.navigationTitle(viewModel.showClosedProjects ? "Closed Projects" : "Open Projects")
 			.toolbar {
 				addProjectToolbarItem
-#if DEBUG
-				resetDBToolbarItem
-#endif
+//#if DEBUG
+//				resetDBToolbarItem
+//#endif
 				sortOrderToolbarItem
 			}
 #if os(iOS)
@@ -77,22 +77,22 @@ struct ProjectsView: View {
 #endif
 	}
 
-#if DEBUG
-	var resetDBToolbarItem: some ToolbarContent {
-		ToolbarItem(placement: .navigationBarTrailing) {
-			Button {
-				viewModel.deleteAll()
-			} label: {
-
-				if UIAccessibility.isVoiceOverRunning {
-					Text("Reset")
-				} else {
-					Label("Reset", systemImage: "-")
-				}
-			}
-		}
-	}
-#endif
+//#if DEBUG
+//	var resetDBToolbarItem: some ToolbarContent {
+//		ToolbarItem(placement: .navigationBarTrailing) {
+//			Button {
+//				viewModel.deleteAll()
+//			} label: {
+//
+//				if UIAccessibility.isVoiceOverRunning {
+//					Text("Reset")
+//				} else {
+//					Label("Reset", systemImage: "-")
+//				}
+//			}
+//		}
+//	}
+//#endif
 
 	var addProjectToolbarItem: some ToolbarContent {
 		ToolbarItem(placement: .navigationBarTrailing) {
