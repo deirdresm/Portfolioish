@@ -29,16 +29,14 @@ struct ProjectsView: View {
 			.navigationTitle(viewModel.showClosedProjects ? "Closed Projects" : "Open Projects")
 			.toolbar {
 				addProjectToolbarItem
-//#if DEBUG
-//				resetDBToolbarItem
-//#endif
 				sortOrderToolbarItem
 			}
 #if os(iOS)
 			.actionSheet(isPresented: $showingSortOrder) {
 				ActionSheet(title: Text("Sort items"), message: nil, buttons: [
 					.default(Text("Optimized")) { viewModel.sortDescriptor = nil },
-					.default(Text("Created On")) { viewModel.sortDescriptor = NSSortDescriptor(keyPath: \Item.createdOn, ascending: false) },
+					.default(Text("Created On")) { viewModel.sortDescriptor =
+						NSSortDescriptor(keyPath: \Item.createdOn, ascending: false) },
 					.default(Text("Title")) { viewModel.sortDescriptor = NSSortDescriptor(keyPath: \Item.title, ascending: true) }
 				]) // ActionSheet
 			} // .actionSheet
@@ -76,23 +74,6 @@ struct ProjectsView: View {
 		.listStyle(.insetGrouped)
 #endif
 	}
-
-//#if DEBUG
-//	var resetDBToolbarItem: some ToolbarContent {
-//		ToolbarItem(placement: .navigationBarTrailing) {
-//			Button {
-//				viewModel.deleteAll()
-//			} label: {
-//
-//				if UIAccessibility.isVoiceOverRunning {
-//					Text("Reset")
-//				} else {
-//					Label("Reset", systemImage: "-")
-//				}
-//			}
-//		}
-//	}
-//#endif
 
 	var addProjectToolbarItem: some ToolbarContent {
 		ToolbarItem(placement: .navigationBarTrailing) {

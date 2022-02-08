@@ -33,7 +33,7 @@ struct PortfolioishApp: App {
 			// no longer the foreground app. Use this rather than
 			// scene phase so we can port to macOS, where scene
 			// phase won't detect our app losing focus.
-			
+
 			#if os(macOS)
 				.onReceive(NotificationCenter.default.publisher(for: NSApplication.willResignActiveNotification), perform: save)
 			#else

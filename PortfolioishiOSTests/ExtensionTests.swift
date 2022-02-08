@@ -34,6 +34,7 @@ class ExtensionTests: XCTestCase {
 		XCTAssertEqual(sortedItems, [example3, example2, example1], "Reverse sorting should yield c, b, a.")
 	}
 
+	// swiftlint:disable:next todo
 	// TODO: write the NSSortDescriptor versions
 
 	// Bundle extensions
@@ -46,7 +47,8 @@ class ExtensionTests: XCTestCase {
 	func testDecodingString() {
 		let bundle = Bundle(for: ExtensionTests.self)
 		let data = bundle.decode(String.self, from: "DecodableString.json")
-		XCTAssertEqual(data, "The rain in Spain falls mainly on the Spaniards.", "The string must match the content of DecodableString.json.")
+		XCTAssertEqual(data, "The rain in Spain falls mainly on the Spaniards.",
+					   "The string must match the content of DecodableString.json.")
 	}
 
 	func testDecodingDictionary() {
@@ -78,6 +80,4 @@ class ExtensionTests: XCTestCase {
 
 		XCTAssertTrue(onChangeFunctionRun, "The onChange() function was not run.")
 	}
-
-	
 }

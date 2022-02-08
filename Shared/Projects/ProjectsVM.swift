@@ -69,7 +69,6 @@ extension ProjectsView {
 			return project.projectItems.sorted(by: sortDescriptor)
 		}
 
-
 		func delete(_ offsets: IndexSet, from project: Project) {
 			let allItems = items(for: project)
 
