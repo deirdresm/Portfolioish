@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreSpotlight
 import CoreData
 
 extension HomeView {
@@ -15,6 +16,7 @@ extension HomeView {
 
 		@Published var projects = [Project]()
 		@Published var items = [Item]()
+		@Published var selectedItem: Item?
 
 		var upNext: ArraySlice<Item> {
 			items.prefix(3)
@@ -70,6 +72,10 @@ extension HomeView {
 			} catch {
 				print("Failed to fetch initial data.")
 			}
+		}
+
+		func selectItem(with identifier: String) {
+			selectedItem = persistence.item(with: identifier)
 		}
 
 		func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {

@@ -8,8 +8,9 @@
 import XCTest
 
 class PortfolioishiOSUITests: XCTestCase {
-
 	var app: XCUIApplication!
+
+	let expectedTabCount = 5
 
     override func setUp() {
         continueAfterFailure = false
@@ -26,7 +27,7 @@ class PortfolioishiOSUITests: XCTestCase {
     }
 
     func testExample() throws {
-		XCTAssertEqual(app.tabBars.buttons.count, 5, "There should be 4 tabs in the app.")
+		XCTAssertEqual(app.tabBars.buttons.count, expectedTabCount, "There should be \(expectedTabCount) tabs in the app.")
 	}
 
 	func testOpenTabAddsProjects() {

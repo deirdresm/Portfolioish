@@ -26,5 +26,4 @@ class DevelopmentTests: BaseTestCase {
 		XCTAssertEqual(persistence.count(for: Project.fetchRequest()), 0, "deleteAll() should leave 0 projects.")
 		XCTAssertEqual(persistence.count(for: Item.fetchRequest()), 0, "deleteAll() should leave 0 items.")
 	}
-
 }

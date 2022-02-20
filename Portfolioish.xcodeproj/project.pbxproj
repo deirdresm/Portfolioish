@@ -11,8 +11,6 @@
 		3816057A27ACD81700BD2C46 /* HomeViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3816057827ACD81700BD2C46 /* HomeViewVM.swift */; };
 		381BC058277C0A670055712F /* PortfolioishApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BC048277C0A660055712F /* PortfolioishApp.swift */; };
 		381BC059277C0A670055712F /* PortfolioishApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BC048277C0A660055712F /* PortfolioishApp.swift */; };
-		381BC05A277C0A670055712F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BC049277C0A660055712F /* ContentView.swift */; };
-		381BC05B277C0A670055712F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BC049277C0A660055712F /* ContentView.swift */; };
 		381BC05C277C0A670055712F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 381BC04A277C0A670055712F /* Assets.xcassets */; };
 		381BC05D277C0A670055712F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 381BC04A277C0A670055712F /* Assets.xcassets */; };
 		381BC068277C0D5E0055712F /* Portfolioish.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 381BC066277C0D5E0055712F /* Portfolioish.xcdatamodeld */; };
@@ -25,6 +23,8 @@
 		3849753B278CFCFD00C505F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38A1C9802786B5390015783F /* Localizable.strings */; };
 		3849753C278CFD0200C505F8 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 38B19C0E278401BB004E4472 /* Localizable.stringsdict */; };
 		3849753D278CFD0200C505F8 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 38B19C0E278401BB004E4472 /* Localizable.stringsdict */; };
+		384CD00027B736E7004BEAA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BC049277C0A660055712F /* ContentView.swift */; };
+		384CD00127B736E8004BEAA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BC049277C0A660055712F /* ContentView.swift */; };
 		385E93CE27842130007C1ADC /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E93CD27842130007C1ADC /* ItemListView.swift */; };
 		385E93CF27842130007C1ADC /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E93CD27842130007C1ADC /* ItemListView.swift */; };
 		385E93D1278421A5007C1ADC /* ProjectSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E93D0278421A5007C1ADC /* ProjectSummaryView.swift */; };
@@ -241,8 +241,8 @@
 		3892795F2787A24800C1CBE8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				3816057827ACD81700BD2C46 /* HomeViewVM.swift */,
 				38D35D40277CF4C7002A9486 /* HomeView.swift */,
+				3816057827ACD81700BD2C46 /* HomeViewVM.swift */,
 				381BC049277C0A660055712F /* ContentView.swift */,
 				385E93D0278421A5007C1ADC /* ProjectSummaryView.swift */,
 			);
@@ -530,8 +530,8 @@
 				386ED7A52781645700495560 /* AwardsView.swift in Sources */,
 				38E860E027819F6700F92B6C /* Color+Additions.swift in Sources */,
 				38D35D48277D0DD1002A9486 /* Item+Extension.swift in Sources */,
-				381BC05A277C0A670055712F /* ContentView.swift in Sources */,
 				385E93D1278421A5007C1ADC /* ProjectSummaryView.swift in Sources */,
+				384CD00027B736E7004BEAA9 /* ContentView.swift in Sources */,
 				38D35D55277E3E89002A9486 /* ProjectHeaderView.swift in Sources */,
 				381BC068277C0D5E0055712F /* Portfolioish.xcdatamodeld in Sources */,
 				381BC058277C0A670055712F /* PortfolioishApp.swift in Sources */,
@@ -559,8 +559,8 @@
 				386ED7A62781645700495560 /* AwardsView.swift in Sources */,
 				38E860E127819F6800F92B6C /* Color+Additions.swift in Sources */,
 				38D35D49277D0DD1002A9486 /* Item+Extension.swift in Sources */,
-				381BC05B277C0A670055712F /* ContentView.swift in Sources */,
 				385E93D2278421A5007C1ADC /* ProjectSummaryView.swift in Sources */,
+				384CD00127B736E8004BEAA9 /* ContentView.swift in Sources */,
 				38D35D56277E3E89002A9486 /* ProjectHeaderView.swift in Sources */,
 				381BC069277C0D5E0055712F /* Portfolioish.xcdatamodeld in Sources */,
 				381BC059277C0A670055712F /* PortfolioishApp.swift in Sources */,

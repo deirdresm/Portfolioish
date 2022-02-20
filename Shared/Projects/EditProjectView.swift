@@ -23,6 +23,9 @@ struct EditProjectView: View {
 
 	@State private var showingDeleteConfirm = false
 
+	@State private var remindMe: Bool
+	@State private var reminderTime: Date
+
 	let colorColumns = [
 		GridItem(.adaptive(minimum: 44))
 	]
@@ -73,6 +76,14 @@ struct EditProjectView: View {
 		_title = State(wrappedValue: project.projectTitle)
 		_detail = State(wrappedValue: project.projectDetail)
 		_color = State(wrappedValue: project.projectColor)
+
+		if let projectReminderTime = project.reminderTime {
+			_reminderTime = State(wrappedValue: projectReminderTime)
+			_remindMe = State(wrappedValue: true)
+		} else {
+			_reminderTime = State(wrappedValue: Date())
+			_remindMe = State(wrappedValue: false)
+		}
 	}
 
 	func toggleClosed() {
@@ -94,7 +105,9 @@ struct EditProjectView: View {
 			  let event1 = CHHapticEvent(eventType: .hapticTransient,
 									  parameters: [intensity, sharpness],
 									  relativeTime: 0)
-			  let event2 = CHHapticEvent(eventType: .hapticContinuous, parameters: [intensity, sharpness], relativeTime: 0.125, duration: 1)
+			  let event2 = CHHapticEvent(eventType: .hapticContinuous,
+										 parameters: [intensity, sharpness],
+										 relativeTime: 0.125, duration: 1)
 			  let pattern = try CHHapticPattern(events: [event1, event2], parameterCurves: [parameter])
 
 			  let player = try hapticEngine?.makePlayer(with: pattern)
@@ -109,6 +122,12 @@ struct EditProjectView: View {
 		project.title = title
 		project.detail = detail
 		project.color = color
+
+		if remindMe {
+			project.reminderTime = reminderTime
+		} else {
+			project.reminderTime = nil
+		}
 	}
 
 	func delete() {

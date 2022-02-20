@@ -9,7 +9,9 @@ import XCTest
 
 class PortfolioishiOSUITestsLaunchTests: XCTestCase {
 
-    override class var runsForEachTargetApplicationUIConfiguration: Bool {
+	let expectedTabCount = 5
+
+	override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }
 

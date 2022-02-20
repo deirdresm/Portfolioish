@@ -33,6 +33,10 @@ struct EditItemView: View {
 		item.completed = completed
 	}
 
+	func save() {
+		persistence.update(item)
+	}
+
     var body: some View {
 		Form {
 			Section(header: Text("Basic settings")) {
@@ -54,7 +58,7 @@ struct EditItemView: View {
 			}
 		}
 		.navigationTitle("Edit Item")
-		.onDisappear(perform: persistence.save)
+		.onDisappear(perform: save)
 	}
 }
 
