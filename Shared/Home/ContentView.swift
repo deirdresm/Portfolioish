@@ -49,11 +49,19 @@ struct ContentView: View {
 					Text("Reset")
 				}
 		}
+		.onAppear(perform: persistence.appLaunched)
 		.onContinueUserActivity(CSSearchableItemActionType, perform: moveToHome)
+		.onOpenURL(perform: openURL)
     }
 
 	func moveToHome(_ input: Any) {
 		selectedView = HomeView.tag
+	}
+
+	/// openURL: for opening from Quick Action
+	func openURL(_ url: URL) {
+		selectedView = ProjectsView.openTag
+		_ = persistence.addProject()
 	}
 }
 

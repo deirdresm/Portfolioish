@@ -15,7 +15,7 @@
           "locale" : "en_US"
         }
       ],
-      "productID" : "dev.deirdre.Portfolioish.unlock",
+      "productID" : "net.deirdre.Portfolioish.unlock",
       "referenceName" : "Unlock Portfolioish Full App",
       "type" : "NonConsumable"
     }

@@ -23,17 +23,6 @@ class Persistence: ObservableObject {
 	/// The UserDefaults suite where we're saving user data
 	let defaults: UserDefaults
 
-	// Loads and saves whether our unlock has been purchased.
-	var fullVersionUnlocked: Bool {
-		get {
-			defaults.bool(forKey: "fullVersionUnlocked")
-		}
-
-		set {
-			defaults.set(newValue, forKey: "fullVersionUnlocked")
-		}
-	}
-
 	static let preview: Persistence = {
 		let previewController = Persistence(inMemory: true)
 		let viewContext = previewController.container.viewContext
@@ -67,6 +56,12 @@ class Persistence: ObservableObject {
 
 		if inMemory || isTesting {
 			container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+		} else {
+			let groupId = "group.net.deirdre.UltimatePortfolio"
+
+			if let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: groupId) {
+				container.persistentStoreDescriptions.first?.url = url.appendingPathComponent("Main.sqlite")
+			}
 		}
 
 		if #available(iOS 13, macOS 10.15, *) {
@@ -188,6 +183,22 @@ class Persistence: ObservableObject {
 		}
 	}
 
+	/// addProject - create new project from a Quick Action or user action
+	/// result is discardable because Quick Action will not use it.
+	@discardableResult func addProject() -> Bool {
+	   let canCreate = fullVersionUnlocked || count(for: Project.fetchRequest()) < 3
+
+	   if canCreate {
+		   let project = Project(context: container.viewContext)
+		   project.closed = false
+		   project.createdOn = Date()
+		   save()
+		   return true
+	   } else {
+		   return false
+	   }
+	}
+
 	/// Restore context after Spotlight search
 
 	func item(with uniqueIdentifier: String) -> Item? {
@@ -260,7 +271,9 @@ class Persistence: ObservableObject {
 		}
 	}
 
+	// swiftlint:disable:next todo
 	// TODO: code to ensure reminders are removed for closed projects
+
 	/// removeReminders - like it says on the tin
 	func removeReminders(for project: Project) {
 		let center = UNUserNotificationCenter.current()
@@ -276,7 +289,6 @@ class Persistence: ObservableObject {
 		center.requestAuthorization(options: [.alert, .sound]) { granted, _ in
 			completion(granted)
 		}
-
 	}
 
 	private func placeReminders(for project: Project, completion: @escaping (Bool) -> Void) {

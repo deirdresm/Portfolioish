@@ -47,15 +47,9 @@ extension ProjectsView {
 			}
 		}
 
+		/// addProject - calls persistence's method of the same name
 		func addProject() {
-			let canCreate = persistence.fullVersionUnlocked || persistence.count(for: Project.fetchRequest()) < 3
-
-			if canCreate {
-				let project = Project(context: persistence.container.viewContext)
-				project.closed = false
-				project.createdOn = Date()
-				persistence.save()
-			} else {
+			if persistence.addProject() == false {
 				showingUnlockView.toggle()
 			}
 		}

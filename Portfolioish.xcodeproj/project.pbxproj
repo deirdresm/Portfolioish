@@ -30,6 +30,8 @@
 		382A218D27C5C42B001F597F /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A218B27C5C42B001F597F /* ProductView.swift */; };
 		382A218F27C5C4ED001F597F /* UnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A218E27C5C4ED001F597F /* UnlockView.swift */; };
 		382A219027C5C4ED001F597F /* UnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A218E27C5C4ED001F597F /* UnlockView.swift */; };
+		382A219227C5D678001F597F /* Persistence+StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A219127C5D678001F597F /* Persistence+StoreKit.swift */; };
+		382A219327C5D678001F597F /* Persistence+StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A219127C5D678001F597F /* Persistence+StoreKit.swift */; };
 		38497539278CFB6600C505F8 /* PerformanceMiniTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38497538278CFB6600C505F8 /* PerformanceMiniTests.swift */; };
 		3849753A278CFCFD00C505F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38A1C9802786B5390015783F /* Localizable.strings */; };
 		3849753B278CFCFD00C505F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38A1C9802786B5390015783F /* Localizable.strings */; };
@@ -81,6 +83,8 @@
 		38D35D56277E3E89002A9486 /* ProjectHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D54277E3E89002A9486 /* ProjectHeaderView.swift */; };
 		38D35D59277E410A002A9486 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D58277E410A002A9486 /* EditProjectView.swift */; };
 		38D35D5A277E410A002A9486 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D58277E410A002A9486 /* EditProjectView.swift */; };
+		38D3A25227C61A9D00C38986 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3A25127C61A9D00C38986 /* AppDelegate.swift */; };
+		38D3A25427C61AAA00C38986 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3A25327C61AAA00C38986 /* SceneDelegate.swift */; };
 		38E860E027819F6700F92B6C /* Color+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E860DF27819F6700F92B6C /* Color+Additions.swift */; };
 		38E860E127819F6800F92B6C /* Color+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E860DF27819F6700F92B6C /* Color+Additions.swift */; };
 /* End PBXBuildFile section */
@@ -112,8 +116,6 @@
 		381BC057277C0A670055712F /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		381BC067277C0D5E0055712F /* Portfolioish.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Portfolioish.xcdatamodel; sourceTree = "<group>"; };
 		381BC06A277C137E0055712F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		381BC06D277C1FFF0055712F /* Portfolioish (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Portfolioish (iOS).entitlements"; sourceTree = "<group>"; };
-		381BC06E277C20050055712F /* Portfolioish--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Portfolioish--iOS--Info.plist"; sourceTree = "<group>"; };
 		381BC070277C20940055712F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		382A217727C36869001F597F /* UnlockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockManager.swift; sourceTree = "<group>"; };
 		382A217B27C372E8001F597F /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		382A218827C5C3AE001F597F /* PurchaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseButton.swift; sourceTree = "<group>"; };
 		382A218B27C5C42B001F597F /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		382A218E27C5C4ED001F597F /* UnlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockView.swift; sourceTree = "<group>"; };
+		382A219127C5D678001F597F /* Persistence+StoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+StoreKit.swift"; sourceTree = "<group>"; };
 		38497538278CFB6600C505F8 /* PerformanceMiniTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceMiniTests.swift; sourceTree = "<group>"; };
 		385E93CD27842130007C1ADC /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		385E93D0278421A5007C1ADC /* ProjectSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSummaryView.swift; sourceTree = "<group>"; };
@@ -156,6 +159,10 @@
 		38D35D50277D3B6A002A9486 /* Binding+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extension.swift"; sourceTree = "<group>"; };
 		38D35D54277E3E89002A9486 /* ProjectHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHeaderView.swift; sourceTree = "<group>"; };
 		38D35D58277E410A002A9486 /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
+		38D3A24E27C6198B00C38986 /* Portfolioish--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Portfolioish--iOS--Info.plist"; sourceTree = SOURCE_ROOT; };
+		38D3A24F27C6198B00C38986 /* Portfolioish (iOS).entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "Portfolioish (iOS).entitlements"; sourceTree = SOURCE_ROOT; };
+		38D3A25127C61A9D00C38986 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		38D3A25327C61AAA00C38986 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		38E860DF27819F6700F92B6C /* Color+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,9 +202,8 @@
 		381BC042277C0A660055712F = {
 			isa = PBXGroup;
 			children = (
-				381BC06E277C20050055712F /* Portfolioish--iOS--Info.plist */,
-				381BC06D277C1FFF0055712F /* Portfolioish (iOS).entitlements */,
 				381BC047277C0A660055712F /* Shared */,
+				38D3A24D27C6196300C38986 /* iOS */,
 				381BC056277C0A670055712F /* macOS */,
 				3892799F2788F95600C1CBE8 /* PortfolioishiOSTests */,
 				389279BA278B988E00C1CBE8 /* PortfolioishiOSUITests */,
@@ -209,10 +215,10 @@
 		381BC047277C0A660055712F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				382A218727C5C366001F597F /* StoreUI */,
-				382A217A27C372BC001F597F /* StoreKit */,
 				381BC048277C0A660055712F /* PortfolioishApp.swift */,
 				3892795F2787A24800C1CBE8 /* Home */,
+				382A218727C5C366001F597F /* StoreUI */,
+				382A217A27C372BC001F597F /* StoreKit */,
 				389279602787A25000C1CBE8 /* Projects */,
 				389279612787A2AD00C1CBE8 /* Awards */,
 				38D35D53277D6CC3002A9486 /* Extensions */,
@@ -352,6 +358,7 @@
 			children = (
 				381BC066277C0D5E0055712F /* Portfolioish.xcdatamodeld */,
 				381BC06A277C137E0055712F /* Persistence.swift */,
+				382A219127C5D678001F597F /* Persistence+StoreKit.swift */,
 				38D35D47277D0DD1002A9486 /* Item+Extension.swift */,
 				38D35D4A277D1A25002A9486 /* Project+Extension.swift */,
 			);
@@ -368,6 +375,17 @@
 				38E860DF27819F6700F92B6C /* Color+Additions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		38D3A24D27C6196300C38986 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				38D3A24F27C6198B00C38986 /* Portfolioish (iOS).entitlements */,
+				38D3A24E27C6198B00C38986 /* Portfolioish--iOS--Info.plist */,
+				38D3A25127C61A9D00C38986 /* AppDelegate.swift */,
+				38D3A25327C61AAA00C38986 /* SceneDelegate.swift */,
+			);
+			path = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -565,6 +583,8 @@
 				386ED795277FF71C00495560 /* Sequence+Sorting.swift in Sources */,
 				386ED79B278037DB00495560 /* Bundle-Decodable.swift in Sources */,
 				38D35D4B277D1A25002A9486 /* Project+Extension.swift in Sources */,
+				38D3A25227C61A9D00C38986 /* AppDelegate.swift in Sources */,
+				38D3A25427C61AAA00C38986 /* SceneDelegate.swift in Sources */,
 				3816057927ACD81700BD2C46 /* HomeViewVM.swift in Sources */,
 				382A217827C3686A001F597F /* UnlockManager.swift in Sources */,
 				386ED7982780326600495560 /* SelectSomethingView.swift in Sources */,
@@ -575,6 +595,7 @@
 				38E860E027819F6700F92B6C /* Color+Additions.swift in Sources */,
 				38D35D48277D0DD1002A9486 /* Item+Extension.swift in Sources */,
 				385E93D1278421A5007C1ADC /* ProjectSummaryView.swift in Sources */,
+				382A219227C5D678001F597F /* Persistence+StoreKit.swift in Sources */,
 				384CD00027B736E7004BEAA9 /* ContentView.swift in Sources */,
 				38D35D55277E3E89002A9486 /* ProjectHeaderView.swift in Sources */,
 				382A218527C5C31D001F597F /* SKProduct-LocalizedPrice.swift in Sources */,
@@ -609,6 +630,7 @@
 				38E860E127819F6800F92B6C /* Color+Additions.swift in Sources */,
 				38D35D49277D0DD1002A9486 /* Item+Extension.swift in Sources */,
 				385E93D2278421A5007C1ADC /* ProjectSummaryView.swift in Sources */,
+				382A219327C5D678001F597F /* Persistence+StoreKit.swift in Sources */,
 				384CD00127B736E8004BEAA9 /* ContentView.swift in Sources */,
 				38D35D56277E3E89002A9486 /* ProjectHeaderView.swift in Sources */,
 				382A218627C5C31D001F597F /* SKProduct-LocalizedPrice.swift in Sources */,

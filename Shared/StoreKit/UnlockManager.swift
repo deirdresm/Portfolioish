@@ -36,7 +36,7 @@ class UnlockManager: NSObject, ObservableObject,
 	init(inMemory: Bool = false, persistence: Persistence) {
 
 		// Prepare to look for our unlock product.
-		let productIDs = Set(["dev.deirdre.Portfolioish.unlock"])
+		let productIDs = Set(["net.deirdre.Portfolioish.unlock"])
 		request = SKProductsRequest(productIdentifiers: productIDs)
 
 		//	tuck persistence manager away
