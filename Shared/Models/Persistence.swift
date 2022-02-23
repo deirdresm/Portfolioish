@@ -20,6 +20,20 @@ class Persistence: ObservableObject {
 	/// Address this class as a singleton (from anywhere).
 	static let shared = Persistence()
 
+	/// The UserDefaults suite where we're saving user data
+	let defaults: UserDefaults
+
+	// Loads and saves whether our unlock has been purchased.
+	var fullVersionUnlocked: Bool {
+		get {
+			defaults.bool(forKey: "fullVersionUnlocked")
+		}
+
+		set {
+			defaults.set(newValue, forKey: "fullVersionUnlocked")
+		}
+	}
+
 	static let preview: Persistence = {
 		let previewController = Persistence(inMemory: true)
 		let viewContext = previewController.container.viewContext
@@ -37,8 +51,10 @@ class Persistence: ObservableObject {
 	/// or on permanent storage (for use in regular app runs.) Defaults to permanent storage.
 	/// - Parameter inMemory: Whether to store this data in temporary memory or not.
 
-	init(inMemory: Bool = false) {
+	init(inMemory: Bool = false, defaults: UserDefaults = .standard) {
 		var isTesting = inMemory
+		self.defaults = defaults
+
 		container = NSPersistentCloudKitContainer(name: "Portfolioish", managedObjectModel: Self.model)
 
 		// For testing and previewing purposes, we create a
@@ -214,5 +230,76 @@ class Persistence: ObservableObject {
 		CSSearchableIndex.default().indexSearchableItems([searchableItem])
 
 		save()
+	}
+
+	/// Reminders, for managing notifications if user's given
+	/// permission and has enabled them for this project. Or,
+	/// for removing them when no longer desired.
+	func addReminders(for project: Project, completion: @escaping (Bool) -> Void) {
+		let center = UNUserNotificationCenter.current()
+
+		center.getNotificationSettings { settings in
+			switch settings.authorizationStatus {
+			case .notDetermined:
+				self.requestNotifications { success in
+					if success {
+						self.placeReminders(for: project, completion: completion)
+					} else {
+						DispatchQueue.main.async {
+							completion(false)
+						}
+					}
+				}
+			case .authorized:
+				self.placeReminders(for: project, completion: completion)
+			default:
+				DispatchQueue.main.async {
+					completion(false)
+				}
+			}
+		}
+	}
+
+	// TODO: code to ensure reminders are removed for closed projects
+	/// removeReminders - like it says on the tin
+	func removeReminders(for project: Project) {
+		let center = UNUserNotificationCenter.current()
+		let id = project.objectID.uriRepresentation().absoluteString
+		center.removePendingNotificationRequests(withIdentifiers: [id])
+	}
+
+	/// requestNotifications - private so not called from elsewhere.
+	/// Checks to ensure the notifications are authorized.
+	private func requestNotifications(completion: @escaping (Bool) -> Void) {
+		let center = UNUserNotificationCenter.current()
+
+		center.requestAuthorization(options: [.alert, .sound]) { granted, _ in
+			completion(granted)
+		}
+
+	}
+
+	private func placeReminders(for project: Project, completion: @escaping (Bool) -> Void) {
+		let content = UNMutableNotificationContent()
+		content.sound = .default
+		content.title = project.projectTitle
+
+		if let projectDetail = project.detail {
+			content.subtitle = projectDetail
+		}
+		let components = Calendar.current.dateComponents([.hour, .minute], from: project.reminderTime ?? Date())
+		let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
+		let id = project.objectID.uriRepresentation().absoluteString
+		let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+
+		UNUserNotificationCenter.current().add(request) { error in
+			DispatchQueue.main.async {
+				if error == nil {
+					completion(true)
+				} else {
+					completion(false)
+				}
+			}
+		}
 	}
 }

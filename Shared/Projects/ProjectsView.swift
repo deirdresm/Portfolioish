@@ -31,6 +31,9 @@ struct ProjectsView: View {
 				addProjectToolbarItem
 				sortOrderToolbarItem
 			}
+			.sheet(isPresented: $viewModel.showingUnlockView) {
+				UnlockView()
+			}
 #if os(iOS)
 			.actionSheet(isPresented: $showingSortOrder) {
 				ActionSheet(title: Text("Sort items"), message: nil, buttons: [

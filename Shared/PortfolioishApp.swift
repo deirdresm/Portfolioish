@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct PortfolioishApp: App {
 	@StateObject var persistence: Persistence
+	@StateObject var unlockManager: UnlockManager
 	var isTesting: Bool
 
 	init() {
@@ -21,6 +22,9 @@ struct PortfolioishApp: App {
 
 		let persistence = Persistence(inMemory: isTesting)
 		_persistence = StateObject(wrappedValue: persistence)
+
+		let unlockManager = UnlockManager(persistence: persistence)
+		_unlockManager = StateObject(wrappedValue: unlockManager)
 	}
 
     var body: some Scene {
@@ -28,6 +32,7 @@ struct PortfolioishApp: App {
             ContentView()
 				.environment(\.managedObjectContext, persistence.container.viewContext)
 				.environmentObject(persistence)
+				.environmentObject(unlockManager)
 
 			// Automatically save when we detect that we are
 			// no longer the foreground app. Use this rather than

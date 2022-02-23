@@ -7,7 +7,9 @@
 
 import SwiftUI
 import CoreHaptics
+import UserNotifications
 
+/// EditProjectView - main view for editing Projects.
 struct EditProjectView: View {
 	@ObservedObject var project: Project
 
@@ -25,6 +27,8 @@ struct EditProjectView: View {
 
 	@State private var remindMe: Bool
 	@State private var reminderTime: Date
+
+	@State private var showingNotificationsError = false
 
 	let colorColumns = [
 		GridItem(.adaptive(minimum: 44))
@@ -59,7 +63,28 @@ struct EditProjectView: View {
 					showingDeleteConfirm.toggle()
 				}
 				.accentColor(.red)
-			}		}
+			}
+
+			Section(header: Text("Project reminders")) {
+				Toggle("Show reminders", isOn: $remindMe.animation().onChange(update))
+					.alert(isPresented: $showingNotificationsError) {
+						Alert(
+							title: Text("Oops!"),
+							message: Text("There was a problem. Please check you have notifications enabled."),
+							primaryButton: .default(Text("Check Settings"), action: showAppSettings),
+							secondaryButton: .cancel()
+						)
+					}
+
+				if remindMe {
+					DatePicker(
+						"Reminder time",
+						selection: $reminderTime.onChange(update),
+						displayedComponents: .hourAndMinute
+					)
+				}
+			}
+		}
 		.navigationTitle("Edit Project")
 		.onDisappear(perform: persistence.save)
 		.alert(isPresented: $showingDeleteConfirm) {
@@ -125,10 +150,19 @@ struct EditProjectView: View {
 
 		if remindMe {
 			project.reminderTime = reminderTime
+
+			persistence.addReminders(for: project) { success in
+				if success == false {
+					project.reminderTime = nil
+					remindMe = false
+
+					showingNotificationsError = true
+				}
+			}
 		} else {
 			project.reminderTime = nil
-		}
-	}
+			persistence.removeReminders(for: project)
+		}	}
 
 	func delete() {
 		persistence.delete(project)
@@ -158,6 +192,17 @@ struct EditProjectView: View {
 				: .isButton
 		)
 		.accessibilityLabel(LocalizedStringKey(item))
+	}
+
+	/// Give link to application settings if notifications fail
+	func showAppSettings() {
+		guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+			return
+		}
+
+		if UIApplication.shared.canOpenURL(settingsUrl) {
+			UIApplication.shared.open(settingsUrl)
+		}
 	}
 }
 

@@ -18,6 +18,7 @@ extension ProjectsView {
 
 		private let projectsController: NSFetchedResultsController<Project>
 		@Published var projects = [Project]()
+		@Published var showingUnlockView = false
 
 		@State var sortDescriptor: NSSortDescriptor?
 
@@ -47,12 +48,16 @@ extension ProjectsView {
 		}
 
 		func addProject() {
-			let project = Project(context: persistence.container.viewContext)
+			let canCreate = persistence.fullVersionUnlocked || persistence.count(for: Project.fetchRequest()) < 3
 
-			project.closed = false
-			project.createdOn = Date()
-			print("adding project".debugDescription)
-			persistence.save()
+			if canCreate {
+				let project = Project(context: persistence.container.viewContext)
+				project.closed = false
+				project.createdOn = Date()
+				persistence.save()
+			} else {
+				showingUnlockView.toggle()
+			}
 		}
 
 		func addItem(to project: Project) {

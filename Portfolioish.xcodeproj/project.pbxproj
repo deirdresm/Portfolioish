@@ -18,6 +18,18 @@
 		381BC06B277C137E0055712F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BC06A277C137E0055712F /* Persistence.swift */; };
 		381BC06C277C137E0055712F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BC06A277C137E0055712F /* Persistence.swift */; };
 		381BC071277C20940055712F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 381BC070277C20940055712F /* CloudKit.framework */; };
+		382A217827C3686A001F597F /* UnlockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A217727C36869001F597F /* UnlockManager.swift */; };
+		382A217927C3686A001F597F /* UnlockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A217727C36869001F597F /* UnlockManager.swift */; };
+		382A217C27C372E8001F597F /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 382A217B27C372E8001F597F /* Configuration.storekit */; };
+		382A217D27C372E8001F597F /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 382A217B27C372E8001F597F /* Configuration.storekit */; };
+		382A218527C5C31D001F597F /* SKProduct-LocalizedPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A218427C5C31D001F597F /* SKProduct-LocalizedPrice.swift */; };
+		382A218627C5C31D001F597F /* SKProduct-LocalizedPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A218427C5C31D001F597F /* SKProduct-LocalizedPrice.swift */; };
+		382A218927C5C3AE001F597F /* PurchaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A218827C5C3AE001F597F /* PurchaseButton.swift */; };
+		382A218A27C5C3AE001F597F /* PurchaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A218827C5C3AE001F597F /* PurchaseButton.swift */; };
+		382A218C27C5C42B001F597F /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A218B27C5C42B001F597F /* ProductView.swift */; };
+		382A218D27C5C42B001F597F /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A218B27C5C42B001F597F /* ProductView.swift */; };
+		382A218F27C5C4ED001F597F /* UnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A218E27C5C4ED001F597F /* UnlockView.swift */; };
+		382A219027C5C4ED001F597F /* UnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A218E27C5C4ED001F597F /* UnlockView.swift */; };
 		38497539278CFB6600C505F8 /* PerformanceMiniTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38497538278CFB6600C505F8 /* PerformanceMiniTests.swift */; };
 		3849753A278CFCFD00C505F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38A1C9802786B5390015783F /* Localizable.strings */; };
 		3849753B278CFCFD00C505F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38A1C9802786B5390015783F /* Localizable.strings */; };
@@ -103,6 +115,12 @@
 		381BC06D277C1FFF0055712F /* Portfolioish (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Portfolioish (iOS).entitlements"; sourceTree = "<group>"; };
 		381BC06E277C20050055712F /* Portfolioish--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Portfolioish--iOS--Info.plist"; sourceTree = "<group>"; };
 		381BC070277C20940055712F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		382A217727C36869001F597F /* UnlockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockManager.swift; sourceTree = "<group>"; };
+		382A217B27C372E8001F597F /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		382A218427C5C31D001F597F /* SKProduct-LocalizedPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKProduct-LocalizedPrice.swift"; sourceTree = "<group>"; };
+		382A218827C5C3AE001F597F /* PurchaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseButton.swift; sourceTree = "<group>"; };
+		382A218B27C5C42B001F597F /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
+		382A218E27C5C4ED001F597F /* UnlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockView.swift; sourceTree = "<group>"; };
 		38497538278CFB6600C505F8 /* PerformanceMiniTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceMiniTests.swift; sourceTree = "<group>"; };
 		385E93CD27842130007C1ADC /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		385E93D0278421A5007C1ADC /* ProjectSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSummaryView.swift; sourceTree = "<group>"; };
@@ -191,6 +209,8 @@
 		381BC047277C0A660055712F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				382A218727C5C366001F597F /* StoreUI */,
+				382A217A27C372BC001F597F /* StoreKit */,
 				381BC048277C0A660055712F /* PortfolioishApp.swift */,
 				3892795F2787A24800C1CBE8 /* Home */,
 				389279602787A25000C1CBE8 /* Projects */,
@@ -228,6 +248,25 @@
 				381BC070277C20940055712F /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		382A217A27C372BC001F597F /* StoreKit */ = {
+			isa = PBXGroup;
+			children = (
+				382A217727C36869001F597F /* UnlockManager.swift */,
+				382A217B27C372E8001F597F /* Configuration.storekit */,
+			);
+			path = StoreKit;
+			sourceTree = "<group>";
+		};
+		382A218727C5C366001F597F /* StoreUI */ = {
+			isa = PBXGroup;
+			children = (
+				382A218827C5C3AE001F597F /* PurchaseButton.swift */,
+				382A218B27C5C42B001F597F /* ProductView.swift */,
+				382A218E27C5C4ED001F597F /* UnlockView.swift */,
+			);
+			path = StoreUI;
 			sourceTree = "<group>";
 		};
 		386ED79D27812A6D00495560 /* Resources */ = {
@@ -322,6 +361,7 @@
 		38D35D53277D6CC3002A9486 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				382A218427C5C31D001F597F /* SKProduct-LocalizedPrice.swift */,
 				38D35D50277D3B6A002A9486 /* Binding+Extension.swift */,
 				386ED79A278037DB00495560 /* Bundle-Decodable.swift */,
 				386ED794277FF71C00495560 /* Sequence+Sorting.swift */,
@@ -458,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				381BC05C277C0A670055712F /* Assets.xcassets in Resources */,
+				382A217C27C372E8001F597F /* Configuration.storekit in Resources */,
 				3849753C278CFD0200C505F8 /* Localizable.stringsdict in Resources */,
 				3849753A278CFCFD00C505F8 /* Localizable.strings in Resources */,
 				38B19C11278402BD004E4472 /* Awards.json in Resources */,
@@ -469,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				381BC05D277C0A670055712F /* Assets.xcassets in Resources */,
+				382A217D27C372E8001F597F /* Configuration.storekit in Resources */,
 				3849753D278CFD0200C505F8 /* Localizable.stringsdict in Resources */,
 				3849753B278CFCFD00C505F8 /* Localizable.strings in Resources */,
 				38B19C12278402BD004E4472 /* Awards.json in Resources */,
@@ -524,8 +566,10 @@
 				386ED79B278037DB00495560 /* Bundle-Decodable.swift in Sources */,
 				38D35D4B277D1A25002A9486 /* Project+Extension.swift in Sources */,
 				3816057927ACD81700BD2C46 /* HomeViewVM.swift in Sources */,
+				382A217827C3686A001F597F /* UnlockManager.swift in Sources */,
 				386ED7982780326600495560 /* SelectSomethingView.swift in Sources */,
 				385E93CE27842130007C1ADC /* ItemListView.swift in Sources */,
+				382A218F27C5C4ED001F597F /* UnlockView.swift in Sources */,
 				386ED7A227812B1900495560 /* Award.swift in Sources */,
 				386ED7A52781645700495560 /* AwardsView.swift in Sources */,
 				38E860E027819F6700F92B6C /* Color+Additions.swift in Sources */,
@@ -533,8 +577,11 @@
 				385E93D1278421A5007C1ADC /* ProjectSummaryView.swift in Sources */,
 				384CD00027B736E7004BEAA9 /* ContentView.swift in Sources */,
 				38D35D55277E3E89002A9486 /* ProjectHeaderView.swift in Sources */,
+				382A218527C5C31D001F597F /* SKProduct-LocalizedPrice.swift in Sources */,
 				381BC068277C0D5E0055712F /* Portfolioish.xcdatamodeld in Sources */,
 				381BC058277C0A670055712F /* PortfolioishApp.swift in Sources */,
+				382A218C27C5C42B001F597F /* ProductView.swift in Sources */,
+				382A218927C5C3AE001F597F /* PurchaseButton.swift in Sources */,
 				38D35D41277CF4C7002A9486 /* HomeView.swift in Sources */,
 				38D35D59277E410A002A9486 /* EditProjectView.swift in Sources */,
 				381BC06B277C137E0055712F /* Persistence.swift in Sources */,
@@ -553,8 +600,10 @@
 				386ED79C278037DB00495560 /* Bundle-Decodable.swift in Sources */,
 				38D35D4C277D1A25002A9486 /* Project+Extension.swift in Sources */,
 				3816057A27ACD81700BD2C46 /* HomeViewVM.swift in Sources */,
+				382A217927C3686A001F597F /* UnlockManager.swift in Sources */,
 				386ED7992780326600495560 /* SelectSomethingView.swift in Sources */,
 				385E93CF27842130007C1ADC /* ItemListView.swift in Sources */,
+				382A219027C5C4ED001F597F /* UnlockView.swift in Sources */,
 				386ED7A327812B1900495560 /* Award.swift in Sources */,
 				386ED7A62781645700495560 /* AwardsView.swift in Sources */,
 				38E860E127819F6800F92B6C /* Color+Additions.swift in Sources */,
@@ -562,8 +611,11 @@
 				385E93D2278421A5007C1ADC /* ProjectSummaryView.swift in Sources */,
 				384CD00127B736E8004BEAA9 /* ContentView.swift in Sources */,
 				38D35D56277E3E89002A9486 /* ProjectHeaderView.swift in Sources */,
+				382A218627C5C31D001F597F /* SKProduct-LocalizedPrice.swift in Sources */,
 				381BC069277C0D5E0055712F /* Portfolioish.xcdatamodeld in Sources */,
 				381BC059277C0A670055712F /* PortfolioishApp.swift in Sources */,
+				382A218D27C5C42B001F597F /* ProductView.swift in Sources */,
+				382A218A27C5C3AE001F597F /* PurchaseButton.swift in Sources */,
 				38D35D42277CF4C7002A9486 /* HomeView.swift in Sources */,
 				38D35D5A277E410A002A9486 /* EditProjectView.swift in Sources */,
 				381BC06C277C137E0055712F /* Persistence.swift in Sources */,
