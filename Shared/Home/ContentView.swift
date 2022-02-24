@@ -12,6 +12,8 @@ struct ContentView: View {
 	@SceneStorage("selectedView") var selectedView: String?
 	@EnvironmentObject var persistence: Persistence
 
+	private let newProjectActivity = "net.deirdre.Portfolioish.newProject"
+
     var body: some View {
 		TabView(selection: $selectedView) {
 			HomeView(persistence: persistence)
@@ -51,6 +53,11 @@ struct ContentView: View {
 		}
 		.onAppear(perform: persistence.appLaunched)
 		.onContinueUserActivity(CSSearchableItemActionType, perform: moveToHome)
+		.onContinueUserActivity(newProjectActivity, perform: createProject)
+		.userActivity(newProjectActivity) { activity in
+			activity.title = "New Project"
+			activity.isEligibleForPrediction = true
+		}
 		.onOpenURL(perform: openURL)
     }
 
@@ -60,6 +67,12 @@ struct ContentView: View {
 
 	/// openURL: for opening from Quick Action
 	func openURL(_ url: URL) {
+		selectedView = ProjectsView.openTag
+		_ = persistence.addProject()
+	}
+
+	/// createProject: for predictive shortcuts
+	func createProject(_ userActivity: NSUserActivity) {
 		selectedView = ProjectsView.openTag
 		_ = persistence.addProject()
 	}

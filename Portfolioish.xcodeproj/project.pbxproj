@@ -85,6 +85,24 @@
 		38D35D5A277E410A002A9486 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D58277E410A002A9486 /* EditProjectView.swift */; };
 		38D3A25227C61A9D00C38986 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3A25127C61A9D00C38986 /* AppDelegate.swift */; };
 		38D3A25427C61AAA00C38986 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3A25327C61AAA00C38986 /* SceneDelegate.swift */; };
+		38D3A25B27C7619C00C38986 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38D3A25A27C7619C00C38986 /* WidgetKit.framework */; platformFilter = maccatalyst; };
+		38D3A25D27C7619C00C38986 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38D3A25C27C7619C00C38986 /* SwiftUI.framework */; platformFilter = maccatalyst; };
+		38D3A26027C7619C00C38986 /* PortfolioishWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3A25F27C7619C00C38986 /* PortfolioishWidget.swift */; };
+		38D3A26327C7619D00C38986 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38D3A26227C7619D00C38986 /* Assets.xcassets */; };
+		38D3A26527C7619D00C38986 /* PortfolioishWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 38D3A26127C7619C00C38986 /* PortfolioishWidget.intentdefinition */; };
+		38D3A26627C7619D00C38986 /* PortfolioishWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 38D3A26127C7619C00C38986 /* PortfolioishWidget.intentdefinition */; };
+		38D3A26A27C7619D00C38986 /* PortfolioishWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 38D3A25927C7619C00C38986 /* PortfolioishWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		38D3A26E27C763C900C38986 /* Portfolioish.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 381BC066277C0D5E0055712F /* Portfolioish.xcdatamodeld */; };
+		38D3A26F27C7642100C38986 /* Item+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D47277D0DD1002A9486 /* Item+Extension.swift */; };
+		38D3A27027C7642100C38986 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BC06A277C137E0055712F /* Persistence.swift */; };
+		38D3A27127C7642100C38986 /* Project+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D4A277D1A25002A9486 /* Project+Extension.swift */; };
+		38D3A27227C7646E00C38986 /* Sequence+Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386ED794277FF71C00495560 /* Sequence+Sorting.swift */; };
+		38D3A27327C764E500C38986 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386ED7A127812B1900495560 /* Award.swift */; };
+		38D3A27427C7651A00C38986 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386ED79A278037DB00495560 /* Bundle-Decodable.swift */; };
+		38D3A27727C7676F00C38986 /* Persistence+Reminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3A27527C7665D00C38986 /* Persistence+Reminders.swift */; };
+		38D3A27827C7677200C38986 /* Persistence+Reminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3A27527C7665D00C38986 /* Persistence+Reminders.swift */; };
+		38D3A27A27C7688900C38986 /* Persistence+Awards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3A27927C7688900C38986 /* Persistence+Awards.swift */; };
+		38D3A27B27C7688900C38986 /* Persistence+Awards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3A27927C7688900C38986 /* Persistence+Awards.swift */; };
 		38E860E027819F6700F92B6C /* Color+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E860DF27819F6700F92B6C /* Color+Additions.swift */; };
 		38E860E127819F6800F92B6C /* Color+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E860DF27819F6700F92B6C /* Color+Additions.swift */; };
 /* End PBXBuildFile section */
@@ -104,7 +122,28 @@
 			remoteGlobalIDString = 381BC04E277C0A670055712F;
 			remoteInfo = "Portfolioish (iOS)";
 		};
+		38D3A26727C7619D00C38986 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 381BC043277C0A660055712F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38D3A25827C7619C00C38986;
+			remoteInfo = PortfolioishWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		38D3A26927C7619D00C38986 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				38D3A26A27C7619D00C38986 /* PortfolioishWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3816057827ACD81700BD2C46 /* HomeViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewVM.swift; sourceTree = "<group>"; };
@@ -163,6 +202,16 @@
 		38D3A24F27C6198B00C38986 /* Portfolioish (iOS).entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "Portfolioish (iOS).entitlements"; sourceTree = SOURCE_ROOT; };
 		38D3A25127C61A9D00C38986 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38D3A25327C61AAA00C38986 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		38D3A25927C7619C00C38986 /* PortfolioishWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PortfolioishWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		38D3A25A27C7619C00C38986 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		38D3A25C27C7619C00C38986 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		38D3A25F27C7619C00C38986 /* PortfolioishWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioishWidget.swift; sourceTree = "<group>"; };
+		38D3A26127C7619C00C38986 /* PortfolioishWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = PortfolioishWidget.intentdefinition; sourceTree = "<group>"; };
+		38D3A26227C7619D00C38986 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		38D3A26427C7619D00C38986 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38D3A27527C7665D00C38986 /* Persistence+Reminders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+Reminders.swift"; sourceTree = "<group>"; };
+		38D3A27927C7688900C38986 /* Persistence+Awards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+Awards.swift"; sourceTree = "<group>"; };
+		38D3A27C27C7717100C38986 /* PortfolioishWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PortfolioishWidgetExtension.entitlements; sourceTree = "<group>"; };
 		38E860DF27819F6700F92B6C /* Color+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,15 +245,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		38D3A25627C7619C00C38986 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38D3A25D27C7619C00C38986 /* SwiftUI.framework in Frameworks */,
+				38D3A25B27C7619C00C38986 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		381BC042277C0A660055712F = {
 			isa = PBXGroup;
 			children = (
+				38D3A27C27C7717100C38986 /* PortfolioishWidgetExtension.entitlements */,
 				381BC047277C0A660055712F /* Shared */,
 				38D3A24D27C6196300C38986 /* iOS */,
 				381BC056277C0A670055712F /* macOS */,
+				38D3A25E27C7619C00C38986 /* PortfolioishWidget */,
 				3892799F2788F95600C1CBE8 /* PortfolioishiOSTests */,
 				389279BA278B988E00C1CBE8 /* PortfolioishiOSUITests */,
 				381BC050277C0A670055712F /* Products */,
@@ -236,6 +296,7 @@
 				381BC055277C0A670055712F /* Portfolioish.app */,
 				3892799E2788F95600C1CBE8 /* PortfolioishiOSTests.xctest */,
 				389279B9278B988E00C1CBE8 /* PortfolioishiOSUITests.xctest */,
+				38D3A25927C7619C00C38986 /* PortfolioishWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,6 +313,8 @@
 			isa = PBXGroup;
 			children = (
 				381BC070277C20940055712F /* CloudKit.framework */,
+				38D3A25A27C7619C00C38986 /* WidgetKit.framework */,
+				38D3A25C27C7619C00C38986 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -359,6 +422,8 @@
 				381BC066277C0D5E0055712F /* Portfolioish.xcdatamodeld */,
 				381BC06A277C137E0055712F /* Persistence.swift */,
 				382A219127C5D678001F597F /* Persistence+StoreKit.swift */,
+				38D3A27527C7665D00C38986 /* Persistence+Reminders.swift */,
+				38D3A27927C7688900C38986 /* Persistence+Awards.swift */,
 				38D35D47277D0DD1002A9486 /* Item+Extension.swift */,
 				38D35D4A277D1A25002A9486 /* Project+Extension.swift */,
 			);
@@ -388,6 +453,17 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
+		38D3A25E27C7619C00C38986 /* PortfolioishWidget */ = {
+			isa = PBXGroup;
+			children = (
+				38D3A25F27C7619C00C38986 /* PortfolioishWidget.swift */,
+				38D3A26127C7619C00C38986 /* PortfolioishWidget.intentdefinition */,
+				38D3A26227C7619D00C38986 /* Assets.xcassets */,
+				38D3A26427C7619D00C38986 /* Info.plist */,
+			);
+			path = PortfolioishWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -399,10 +475,12 @@
 				381BC04C277C0A670055712F /* Frameworks */,
 				381BC04D277C0A670055712F /* Resources */,
 				381243CB27857CE2004CBC00 /* Swiftlint */,
+				38D3A26927C7619D00C38986 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				38D3A26827C7619D00C38986 /* PBXTargetDependency */,
 			);
 			name = "Portfolioish (iOS)";
 			productName = "Portfolioish (iOS)";
@@ -462,6 +540,23 @@
 			productReference = 389279B9278B988E00C1CBE8 /* PortfolioishiOSUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		38D3A25827C7619C00C38986 /* PortfolioishWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38D3A26B27C7619D00C38986 /* Build configuration list for PBXNativeTarget "PortfolioishWidgetExtension" */;
+			buildPhases = (
+				38D3A25527C7619C00C38986 /* Sources */,
+				38D3A25627C7619C00C38986 /* Frameworks */,
+				38D3A25727C7619C00C38986 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PortfolioishWidgetExtension;
+			productName = PortfolioishWidgetExtension;
+			productReference = 38D3A25927C7619C00C38986 /* PortfolioishWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -486,6 +581,9 @@
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = 381BC04E277C0A670055712F;
 					};
+					38D3A25827C7619C00C38986 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
 				};
 			};
 			buildConfigurationList = 381BC046277C0A660055712F /* Build configuration list for PBXProject "Portfolioish" */;
@@ -506,6 +604,7 @@
 				381BC054277C0A670055712F /* Portfolioish (macOS) */,
 				3892799D2788F95600C1CBE8 /* PortfolioishiOSTests */,
 				389279B8278B988E00C1CBE8 /* PortfolioishiOSUITests */,
+				38D3A25827C7619C00C38986 /* PortfolioishWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -551,6 +650,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		38D3A25727C7619C00C38986 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38D3A26327C7619D00C38986 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -590,9 +697,12 @@
 				386ED7982780326600495560 /* SelectSomethingView.swift in Sources */,
 				385E93CE27842130007C1ADC /* ItemListView.swift in Sources */,
 				382A218F27C5C4ED001F597F /* UnlockView.swift in Sources */,
+				38D3A26627C7619D00C38986 /* PortfolioishWidget.intentdefinition in Sources */,
 				386ED7A227812B1900495560 /* Award.swift in Sources */,
 				386ED7A52781645700495560 /* AwardsView.swift in Sources */,
 				38E860E027819F6700F92B6C /* Color+Additions.swift in Sources */,
+				38D3A27A27C7688900C38986 /* Persistence+Awards.swift in Sources */,
+				38D3A27727C7676F00C38986 /* Persistence+Reminders.swift in Sources */,
 				38D35D48277D0DD1002A9486 /* Item+Extension.swift in Sources */,
 				385E93D1278421A5007C1ADC /* ProjectSummaryView.swift in Sources */,
 				382A219227C5D678001F597F /* Persistence+StoreKit.swift in Sources */,
@@ -625,8 +735,10 @@
 				386ED7992780326600495560 /* SelectSomethingView.swift in Sources */,
 				385E93CF27842130007C1ADC /* ItemListView.swift in Sources */,
 				382A219027C5C4ED001F597F /* UnlockView.swift in Sources */,
+				38D3A27B27C7688900C38986 /* Persistence+Awards.swift in Sources */,
 				386ED7A327812B1900495560 /* Award.swift in Sources */,
 				386ED7A62781645700495560 /* AwardsView.swift in Sources */,
+				38D3A27827C7677200C38986 /* Persistence+Reminders.swift in Sources */,
 				38E860E127819F6800F92B6C /* Color+Additions.swift in Sources */,
 				38D35D49277D0DD1002A9486 /* Item+Extension.swift in Sources */,
 				385E93D2278421A5007C1ADC /* ProjectSummaryView.swift in Sources */,
@@ -670,6 +782,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		38D3A25527C7619C00C38986 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38D3A26527C7619D00C38986 /* PortfolioishWidget.intentdefinition in Sources */,
+				38D3A27127C7642100C38986 /* Project+Extension.swift in Sources */,
+				38D3A27227C7646E00C38986 /* Sequence+Sorting.swift in Sources */,
+				38D3A26E27C763C900C38986 /* Portfolioish.xcdatamodeld in Sources */,
+				38D3A26F27C7642100C38986 /* Item+Extension.swift in Sources */,
+				38D3A27427C7651A00C38986 /* Bundle-Decodable.swift in Sources */,
+				38D3A27327C764E500C38986 /* Award.swift in Sources */,
+				38D3A26027C7619C00C38986 /* PortfolioishWidget.swift in Sources */,
+				38D3A27027C7642100C38986 /* Persistence.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -682,6 +810,11 @@
 			isa = PBXTargetDependency;
 			target = 381BC04E277C0A670055712F /* Portfolioish (iOS) */;
 			targetProxy = 389279BF278B988E00C1CBE8 /* PBXContainerItemProxy */;
+		};
+		38D3A26827C7619D00C38986 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 38D3A25827C7619C00C38986 /* PortfolioishWidgetExtension */;
+			targetProxy = 38D3A26727C7619D00C38986 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -834,6 +967,7 @@
 		381BC061277C0A670055712F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Portfolioish (iOS).entitlements";
@@ -866,6 +1000,7 @@
 		381BC062277C0A670055712F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Portfolioish (iOS).entitlements";
@@ -1032,6 +1167,67 @@
 			};
 			name = Release;
 		};
+		38D3A26C27C7619D00C38986 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = PortfolioishWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V3N8JZ2T92;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PortfolioishWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PortfolioishWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.deirdre.Portfolioish.PortfolioishWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		38D3A26D27C7619D00C38986 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = PortfolioishWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V3N8JZ2T92;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PortfolioishWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PortfolioishWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.deirdre.Portfolioish.PortfolioishWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1076,6 +1272,15 @@
 			buildConfigurations = (
 				389279C2278B988E00C1CBE8 /* Debug */,
 				389279C3278B988E00C1CBE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38D3A26B27C7619D00C38986 /* Build configuration list for PBXNativeTarget "PortfolioishWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38D3A26C27C7619D00C38986 /* Debug */,
+				38D3A26D27C7619D00C38986 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

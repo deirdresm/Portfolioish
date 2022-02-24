@@ -8,17 +8,6 @@
 import StoreKit
 
 extension Persistence {
-	// Loads and saves whether our unlock has been purchased.
-	var fullVersionUnlocked: Bool {
-		get {
-			defaults.bool(forKey: "fullVersionUnlocked")
-		}
-
-		set {
-			defaults.set(newValue, forKey: "fullVersionUnlocked")
-		}
-	}
-
 	///	Encourage reviews
 	func appLaunched() {
 		let allScenes = UIApplication.shared.connectedScenes
