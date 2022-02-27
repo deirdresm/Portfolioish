@@ -55,10 +55,12 @@ extension ProjectsView {
 		}
 
 		func addItem(to project: Project) {
-				let item = Item(context: persistence.container.viewContext)
-				item.project = project
-				item.createdOn = Date()
-				persistence.save()
+			let item = Item(context: persistence.container.viewContext)
+			item.project = project
+			item.createdOn = Date()
+			item.priority = 2
+			item.completed = false
+			persistence.save()
 		}
 
 		func items(for project: Project) -> [Item] {

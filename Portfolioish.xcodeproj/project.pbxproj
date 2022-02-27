@@ -103,6 +103,10 @@
 		38D3A27827C7677200C38986 /* Persistence+Reminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3A27527C7665D00C38986 /* Persistence+Reminders.swift */; };
 		38D3A27A27C7688900C38986 /* Persistence+Awards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3A27927C7688900C38986 /* Persistence+Awards.swift */; };
 		38D3A27B27C7688900C38986 /* Persistence+Awards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3A27927C7688900C38986 /* Persistence+Awards.swift */; };
+		38D3A2B427CB51A100C38986 /* Color+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E860DF27819F6700F92B6C /* Color+Additions.swift */; };
+		38D3A2B827CB559900C38986 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3A2B527CB557500C38986 /* Provider.swift */; };
+		38D3A2BC27CB5BC600C38986 /* SimpleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3A2B927CB5B8B00C38986 /* SimpleWidget.swift */; };
+		38D3A2BE27CB5BF400C38986 /* ComplexWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3A2BD27CB5BF400C38986 /* ComplexWidget.swift */; };
 		38E860E027819F6700F92B6C /* Color+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E860DF27819F6700F92B6C /* Color+Additions.swift */; };
 		38E860E127819F6800F92B6C /* Color+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E860DF27819F6700F92B6C /* Color+Additions.swift */; };
 /* End PBXBuildFile section */
@@ -212,6 +216,9 @@
 		38D3A27527C7665D00C38986 /* Persistence+Reminders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+Reminders.swift"; sourceTree = "<group>"; };
 		38D3A27927C7688900C38986 /* Persistence+Awards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+Awards.swift"; sourceTree = "<group>"; };
 		38D3A27C27C7717100C38986 /* PortfolioishWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PortfolioishWidgetExtension.entitlements; sourceTree = "<group>"; };
+		38D3A2B527CB557500C38986 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		38D3A2B927CB5B8B00C38986 /* SimpleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWidget.swift; sourceTree = "<group>"; };
+		38D3A2BD27CB5BF400C38986 /* ComplexWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexWidget.swift; sourceTree = "<group>"; };
 		38E860DF27819F6700F92B6C /* Color+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -457,9 +464,12 @@
 			isa = PBXGroup;
 			children = (
 				38D3A25F27C7619C00C38986 /* PortfolioishWidget.swift */,
+				38D3A2BD27CB5BF400C38986 /* ComplexWidget.swift */,
 				38D3A26127C7619C00C38986 /* PortfolioishWidget.intentdefinition */,
 				38D3A26227C7619D00C38986 /* Assets.xcassets */,
 				38D3A26427C7619D00C38986 /* Info.plist */,
+				38D3A2B527CB557500C38986 /* Provider.swift */,
+				38D3A2B927CB5B8B00C38986 /* SimpleWidget.swift */,
 			);
 			path = PortfolioishWidget;
 			sourceTree = "<group>";
@@ -791,10 +801,14 @@
 				38D3A27227C7646E00C38986 /* Sequence+Sorting.swift in Sources */,
 				38D3A26E27C763C900C38986 /* Portfolioish.xcdatamodeld in Sources */,
 				38D3A26F27C7642100C38986 /* Item+Extension.swift in Sources */,
+				38D3A2BE27CB5BF400C38986 /* ComplexWidget.swift in Sources */,
+				38D3A2B427CB51A100C38986 /* Color+Additions.swift in Sources */,
 				38D3A27427C7651A00C38986 /* Bundle-Decodable.swift in Sources */,
+				38D3A2B827CB559900C38986 /* Provider.swift in Sources */,
 				38D3A27327C764E500C38986 /* Award.swift in Sources */,
 				38D3A26027C7619C00C38986 /* PortfolioishWidget.swift in Sources */,
 				38D3A27027C7642100C38986 /* Persistence.swift in Sources */,
+				38D3A2BC27CB5BC600C38986 /* SimpleWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

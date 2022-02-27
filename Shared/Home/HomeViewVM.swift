@@ -18,13 +18,8 @@ extension HomeView {
 		@Published var items = [Item]()
 		@Published var selectedItem: Item?
 
-		var upNext: ArraySlice<Item> {
-			items.prefix(3)
-		}
-
-		var moreToExplore: ArraySlice<Item> {
-			items.dropFirst(3)
-		}
+		@Published var upNext = ArraySlice<Item>()
+		@Published var moreToExplore = ArraySlice<Item>()
 
 		var persistence: Persistence
 
@@ -44,13 +39,7 @@ extension HomeView {
 
 			// Construct a fetch request to show the 10 highest-priority,
 			// incomplete items from open projects.
-			let itemRequest: NSFetchRequest<Item> = Item.fetchRequest()
-
-			let completedPredicate = NSPredicate(format: "completed = false")
-			let openPredicate = NSPredicate(format: "project.closed = false")
-			itemRequest.predicate = NSCompoundPredicate(type: .and, subpredicates: [completedPredicate, openPredicate])
-			itemRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Item.priority, ascending: false)]
-			itemRequest.fetchLimit = 10
+			let itemRequest = persistence.fetchRequestForTopItems(count: 10)
 
 			itemsController = NSFetchedResultsController(
 				fetchRequest: itemRequest,
@@ -69,6 +58,9 @@ extension HomeView {
 				try itemsController.performFetch()
 				projects = projectsController.fetchedObjects ?? []
 				items = itemsController.fetchedObjects ?? []
+
+				upNext = items.prefix(3)
+				moreToExplore = items.dropFirst(3)
 			} catch {
 				print("Failed to fetch initial data.")
 			}
@@ -79,11 +71,12 @@ extension HomeView {
 		}
 
 		func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-			if let newItems = controller.fetchedObjects as? [Item] {
-				items = newItems
-			} else if let newProjects = controller.fetchedObjects as? [Project] {
-				projects = newProjects
-			}
+			items = itemsController.fetchedObjects ?? []
+
+			upNext = items.prefix(3)
+			moreToExplore = items.dropFirst(3)
+
+			projects = projectsController.fetchedObjects ?? []
 		}
 
 		func addSampleData() {

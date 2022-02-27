@@ -78,6 +78,8 @@ class Persistence: ObservableObject {
 				fatalError("Fatal error loading store: \(error.localizedDescription)")
 			}
 
+			self.container.viewContext.automaticallyMergesChangesFromParent = true
+
 			#if DEBUG
 			if isTesting {
 				self.deleteAll()
@@ -97,6 +99,22 @@ class Persistence: ObservableObject {
 //				self, selector: #selector(type(of: self).storeRemoteChange(_:)),
 //				name: .NSPersistentStoreRemoteChange, object: nil)
 //		}
+	}
+
+	func fetchRequestForTopItems(count: Int = 1) -> NSFetchRequest<Item> {
+		let itemRequest: NSFetchRequest<Item> = Item.fetchRequest()
+
+		let completedPredicate = NSPredicate(format: "completed = false")
+		let openPredicate = NSPredicate(format: "project.closed = false")
+		itemRequest.predicate = NSCompoundPredicate(type: .and, subpredicates: [completedPredicate, openPredicate])
+		itemRequest.sortDescriptors = [NSSortDescriptor(keyPath: \Item.priority, ascending: false)]
+		itemRequest.fetchLimit = count
+
+		return itemRequest
+	}
+
+	func results<T: NSManagedObject>(for fetchRequest: NSFetchRequest<T>) -> [T] {
+		return (try? container.viewContext.fetch(fetchRequest)) ?? []
 	}
 
 	/// Creates example projects and items to make manual testing easier.
@@ -127,21 +145,18 @@ class Persistence: ObservableObject {
 	/// Note: not called anywhere.
 
 	func deleteAll() {
-		let itemFetchRequest: NSFetchRequest<NSFetchRequestResult> = Item.fetchRequest()
-		let itemBatchDeleteRequest = NSBatchDeleteRequest(fetchRequest: itemFetchRequest)
-		_ = try? container.viewContext.execute(itemBatchDeleteRequest)
+		let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = Item.fetchRequest()
+		delete(fetchRequest1)
 
-		let projectFetchRequest: NSFetchRequest<NSFetchRequestResult> = Project.fetchRequest()
-		let projectBatchDeleteRequest = NSBatchDeleteRequest(fetchRequest: projectFetchRequest)
-		_ = try? container.viewContext.execute(projectBatchDeleteRequest)
+		let fetchRequest2: NSFetchRequest<NSFetchRequestResult> = Project.fetchRequest()
+		delete(fetchRequest2)
 
 		container.viewContext.reset() // reset the container so the view refreshes to the new context container
 	}
 
 	/// Saves our Core Data context iff there are changes. This silently ignores
 	/// any errors caused by saving, but this should be fine because all our
-	/// attributes are optional.
-
+	/// attributes are optional. Also refreshes Widget timelines so they're fresh.
 	func save() {
 		if container.viewContext.hasChanges {
 			try? container.viewContext.save()
@@ -159,6 +174,16 @@ class Persistence: ObservableObject {
 		}
 
 		container.viewContext.delete(object)
+	}
+
+	private func delete(_ fetchRequest: NSFetchRequest<NSFetchRequestResult>) {
+		let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+		batchDeleteRequest1.resultType = .resultTypeObjectIDs
+
+		if let delete = try? container.viewContext.execute(batchDeleteRequest1) as? NSBatchDeleteResult {
+			let changes = [NSDeletedObjectsKey: delete.result as? [NSManagedObjectID] ?? []]
+			NSManagedObjectContext.mergeChanges(fromRemoteContextSave: changes, into: [container.viewContext])
+		}
 	}
 
 	func count<T>(for fetchRequest: NSFetchRequest<T>) -> Int {
