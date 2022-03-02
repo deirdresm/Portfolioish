@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreHaptics
 import UserNotifications
+import CloudKit
 
 /// EditProjectView - main view for editing Projects.
 struct EditProjectView: View {
@@ -86,6 +87,26 @@ struct EditProjectView: View {
 			}
 		}
 		.navigationTitle("Edit Project")
+		.toolbar {
+			Button {
+				let records = project.prepareCloudRecords()
+				let operation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
+				operation.savePolicy = .allKeys
+
+				operation.modifyRecordsResultBlock = { records in
+					switch records {
+					case .success:
+						CKContainer.default().publicCloudDatabase.add(operation)
+					case .failure(let error):
+						print("Error: \(error.localizedDescription)")
+					}
+				}
+
+//				CKContainer.default().publicCloudDatabase.add(operation)
+			} label: {
+				Label("Upload to iCloud", systemImage: "icloud.and.arrow.up")
+			}
+		}
 		.onDisappear(perform: persistence.save)
 		.alert(isPresented: $showingDeleteConfirm) {
 			Alert(title: Text("Delete project?"),

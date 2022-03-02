@@ -109,6 +109,21 @@
 		38D3A2BE27CB5BF400C38986 /* ComplexWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3A2BD27CB5BF400C38986 /* ComplexWidget.swift */; };
 		38E860E027819F6700F92B6C /* Color+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E860DF27819F6700F92B6C /* Color+Additions.swift */; };
 		38E860E127819F6800F92B6C /* Color+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E860DF27819F6700F92B6C /* Color+Additions.swift */; };
+		38FA8B3627CC751B0077A382 /* SharedProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B3527CC751B0077A382 /* SharedProject.swift */; };
+		38FA8B3727CC751B0077A382 /* SharedProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B3527CC751B0077A382 /* SharedProject.swift */; };
+		38FA8B3827CC751B0077A382 /* SharedProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B3527CC751B0077A382 /* SharedProject.swift */; };
+		38FA8B3A27CC77160077A382 /* SharedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B3927CC77160077A382 /* SharedItem.swift */; };
+		38FA8B3B27CC77160077A382 /* SharedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B3927CC77160077A382 /* SharedItem.swift */; };
+		38FA8B3C27CC77160077A382 /* SharedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B3927CC77160077A382 /* SharedItem.swift */; };
+		38FA8B3E27CC78230077A382 /* LoadStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B3D27CC78230077A382 /* LoadStates.swift */; };
+		38FA8B3F27CC78230077A382 /* LoadStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B3D27CC78230077A382 /* LoadStates.swift */; };
+		38FA8B4027CC78230077A382 /* LoadStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B3D27CC78230077A382 /* LoadStates.swift */; };
+		38FA8B4327CC78C40077A382 /* SharedProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B4227CC78C40077A382 /* SharedProjectsView.swift */; };
+		38FA8B4427CC78C40077A382 /* SharedProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B4227CC78C40077A382 /* SharedProjectsView.swift */; };
+		38FA8B4527CC78C40077A382 /* SharedProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B4227CC78C40077A382 /* SharedProjectsView.swift */; };
+		38FA8B4727CC8C720077A382 /* SharedItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B4627CC8C720077A382 /* SharedItemsView.swift */; };
+		38FA8B4827CC8C720077A382 /* SharedItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B4627CC8C720077A382 /* SharedItemsView.swift */; };
+		38FA8B4927CC8C720077A382 /* SharedItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B4627CC8C720077A382 /* SharedItemsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -220,6 +235,11 @@
 		38D3A2B927CB5B8B00C38986 /* SimpleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleWidget.swift; sourceTree = "<group>"; };
 		38D3A2BD27CB5BF400C38986 /* ComplexWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexWidget.swift; sourceTree = "<group>"; };
 		38E860DF27819F6700F92B6C /* Color+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Additions.swift"; sourceTree = "<group>"; };
+		38FA8B3527CC751B0077A382 /* SharedProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedProject.swift; sourceTree = "<group>"; };
+		38FA8B3927CC77160077A382 /* SharedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedItem.swift; sourceTree = "<group>"; };
+		38FA8B3D27CC78230077A382 /* LoadStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadStates.swift; sourceTree = "<group>"; };
+		38FA8B4227CC78C40077A382 /* SharedProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedProjectsView.swift; sourceTree = "<group>"; };
+		38FA8B4627CC8C720077A382 /* SharedItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedItemsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +308,7 @@
 				382A217A27C372BC001F597F /* StoreKit */,
 				389279602787A25000C1CBE8 /* Projects */,
 				389279612787A2AD00C1CBE8 /* Awards */,
+				38FA8B4127CC78640077A382 /* Community */,
 				38D35D53277D6CC3002A9486 /* Extensions */,
 				38D35D46277D0DB4002A9486 /* Models */,
 				38A1C97F2786B5390015783F /* Localization */,
@@ -472,6 +493,18 @@
 				38D3A2B927CB5B8B00C38986 /* SimpleWidget.swift */,
 			);
 			path = PortfolioishWidget;
+			sourceTree = "<group>";
+		};
+		38FA8B4127CC78640077A382 /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				38FA8B3527CC751B0077A382 /* SharedProject.swift */,
+				38FA8B3927CC77160077A382 /* SharedItem.swift */,
+				38FA8B3D27CC78230077A382 /* LoadStates.swift */,
+				38FA8B4227CC78C40077A382 /* SharedProjectsView.swift */,
+				38FA8B4627CC8C720077A382 /* SharedItemsView.swift */,
+			);
+			path = Community;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -698,7 +731,10 @@
 			files = (
 				38D35D44277CF57F002A9486 /* ProjectsView.swift in Sources */,
 				386ED795277FF71C00495560 /* Sequence+Sorting.swift in Sources */,
+				38FA8B3627CC751B0077A382 /* SharedProject.swift in Sources */,
+				38FA8B3E27CC78230077A382 /* LoadStates.swift in Sources */,
 				386ED79B278037DB00495560 /* Bundle-Decodable.swift in Sources */,
+				38FA8B3A27CC77160077A382 /* SharedItem.swift in Sources */,
 				38D35D4B277D1A25002A9486 /* Project+Extension.swift in Sources */,
 				38D3A25227C61A9D00C38986 /* AppDelegate.swift in Sources */,
 				38D3A25427C61AAA00C38986 /* SceneDelegate.swift in Sources */,
@@ -707,6 +743,7 @@
 				386ED7982780326600495560 /* SelectSomethingView.swift in Sources */,
 				385E93CE27842130007C1ADC /* ItemListView.swift in Sources */,
 				382A218F27C5C4ED001F597F /* UnlockView.swift in Sources */,
+				38FA8B4727CC8C720077A382 /* SharedItemsView.swift in Sources */,
 				38D3A26627C7619D00C38986 /* PortfolioishWidget.intentdefinition in Sources */,
 				386ED7A227812B1900495560 /* Award.swift in Sources */,
 				386ED7A52781645700495560 /* AwardsView.swift in Sources */,
@@ -728,6 +765,7 @@
 				381BC06B277C137E0055712F /* Persistence.swift in Sources */,
 				3885E783278EA6E9000E552D /* ProjectsVM.swift in Sources */,
 				38D35D4E277D339F002A9486 /* EditItemView.swift in Sources */,
+				38FA8B4327CC78C40077A382 /* SharedProjectsView.swift in Sources */,
 				38D35D51277D3B6A002A9486 /* Binding+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -736,13 +774,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38FA8B3727CC751B0077A382 /* SharedProject.swift in Sources */,
 				38D35D45277CF57F002A9486 /* ProjectsView.swift in Sources */,
 				386ED796277FF71C00495560 /* Sequence+Sorting.swift in Sources */,
+				38FA8B4827CC8C720077A382 /* SharedItemsView.swift in Sources */,
 				386ED79C278037DB00495560 /* Bundle-Decodable.swift in Sources */,
 				38D35D4C277D1A25002A9486 /* Project+Extension.swift in Sources */,
 				3816057A27ACD81700BD2C46 /* HomeViewVM.swift in Sources */,
+				38FA8B3F27CC78230077A382 /* LoadStates.swift in Sources */,
 				382A217927C3686A001F597F /* UnlockManager.swift in Sources */,
 				386ED7992780326600495560 /* SelectSomethingView.swift in Sources */,
+				38FA8B4427CC78C40077A382 /* SharedProjectsView.swift in Sources */,
 				385E93CF27842130007C1ADC /* ItemListView.swift in Sources */,
 				382A219027C5C4ED001F597F /* UnlockView.swift in Sources */,
 				38D3A27B27C7688900C38986 /* Persistence+Awards.swift in Sources */,
@@ -752,6 +794,7 @@
 				38E860E127819F6800F92B6C /* Color+Additions.swift in Sources */,
 				38D35D49277D0DD1002A9486 /* Item+Extension.swift in Sources */,
 				385E93D2278421A5007C1ADC /* ProjectSummaryView.swift in Sources */,
+				38FA8B3B27CC77160077A382 /* SharedItem.swift in Sources */,
 				382A219327C5D678001F597F /* Persistence+StoreKit.swift in Sources */,
 				384CD00127B736E8004BEAA9 /* ContentView.swift in Sources */,
 				38D35D56277E3E89002A9486 /* ProjectHeaderView.swift in Sources */,
@@ -804,11 +847,16 @@
 				38D3A2BE27CB5BF400C38986 /* ComplexWidget.swift in Sources */,
 				38D3A2B427CB51A100C38986 /* Color+Additions.swift in Sources */,
 				38D3A27427C7651A00C38986 /* Bundle-Decodable.swift in Sources */,
+				38FA8B4927CC8C720077A382 /* SharedItemsView.swift in Sources */,
+				38FA8B3827CC751B0077A382 /* SharedProject.swift in Sources */,
+				38FA8B4527CC78C40077A382 /* SharedProjectsView.swift in Sources */,
 				38D3A2B827CB559900C38986 /* Provider.swift in Sources */,
 				38D3A27327C764E500C38986 /* Award.swift in Sources */,
 				38D3A26027C7619C00C38986 /* PortfolioishWidget.swift in Sources */,
 				38D3A27027C7642100C38986 /* Persistence.swift in Sources */,
 				38D3A2BC27CB5BC600C38986 /* SimpleWidget.swift in Sources */,
+				38FA8B3C27CC77160077A382 /* SharedItem.swift in Sources */,
+				38FA8B4027CC78230077A382 /* LoadStates.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

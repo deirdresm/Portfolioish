@@ -25,6 +25,10 @@ extension Item {
 		createdOn ?? Date()
 	}
 
+	var projectTitle: String {
+		project?.projectTitle ?? ""
+	}
+
 	static var example: Item {
 		let controller = Persistence.preview
 		let viewContext = controller.container.viewContext

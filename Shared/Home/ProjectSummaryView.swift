@@ -11,16 +11,25 @@ struct ProjectSummaryView: View {
 	@ObservedObject var project: Project
 
 	var body: some View {
-		VStack(alignment: .leading) {
-			Text("\(project.projectItems.count) items")
-				.font(.caption)
-				.foregroundColor(.secondary)
+		NavigationLink(destination: EditProjectView(project: project)) {
+			VStack(alignment: .leading) {
+				Text("\(project.projectItems.count) items")
+					.font(.caption)
+					.foregroundColor(.secondary)
 
-			Text(project.projectTitle)
-				.font(.title2)
+				ZStack {
+					Text(project.projectTitle)
+						.font(.title2)
+						.foregroundColor(.primary)
+					Text(project.projectTitle)
+						.font(.title2)
+						.foregroundColor(Color(project.projectColor))
+						.opacity(0.5)
+				}
 
-			ProgressView(value: project.completionAmount)
-				.accentColor(Color(project.projectColor))
+				ProgressView(value: project.completionAmount)
+					.accentColor(Color(project.projectColor))
+			}
 		}
 		.padding()
 		.background(Color.secondarySystemGroupedBackground)
