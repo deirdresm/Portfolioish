@@ -83,7 +83,9 @@ class Persistence: ObservableObject {
 			#if DEBUG
 			if isTesting {
 				self.deleteAll()
-				UIView.setAnimationsEnabled(false)
+				#if os(iOS)
+					UIView.setAnimationsEnabled(false)
+				#endif
 			}
 			#endif
 		}

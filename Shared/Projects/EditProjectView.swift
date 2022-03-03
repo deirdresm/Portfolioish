@@ -55,9 +55,11 @@ struct EditProjectView: View {
 					project.closed.toggle()
 					update()
 
-					if project.closed {
-						UINotificationFeedbackGenerator().notificationOccurred(.success)
-					}
+					#if os(iOS)
+						if project.closed {
+							UINotificationFeedbackGenerator().notificationOccurred(.success)
+						}
+					#endif
 				}
 
 				Button("Delete this project") {
@@ -214,17 +216,6 @@ struct EditProjectView: View {
 				: .isButton
 		)
 		.accessibilityLabel(LocalizedStringKey(item))
-	}
-
-	/// Give link to application settings if notifications fail
-	func showAppSettings() {
-		guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-			return
-		}
-
-		if UIApplication.shared.canOpenURL(settingsUrl) {
-			UIApplication.shared.open(settingsUrl)
-		}
 	}
 }
 

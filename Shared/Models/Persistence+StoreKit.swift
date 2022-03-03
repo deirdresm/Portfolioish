@@ -10,13 +10,18 @@ import StoreKit
 extension Persistence {
 	///	Encourage reviews
 	func appLaunched() {
-		let allScenes = UIApplication.shared.connectedScenes
-		let scene = allScenes.first { $0.activationState == .foregroundActive }
+		// swiftlint:disable:next todo
+		// TODO: nudge for app reviews in macOS
+		#if os(iOS)
+			let allScenes = UIApplication.shared.connectedScenes
 
-		guard count(for: Project.fetchRequest()) >= 5 else { return }
+			let scene = allScenes.first { $0.activationState == .foregroundActive }
 
-		if let windowScene = scene as? UIWindowScene {
-			SKStoreReviewController.requestReview(in: windowScene)
-		}
+			guard count(for: Project.fetchRequest()) >= 5 else { return }
+
+			if let windowScene = scene as? UIWindowScene {
+				SKStoreReviewController.requestReview(in: windowScene)
+			}
+		#endif
 	}
 }

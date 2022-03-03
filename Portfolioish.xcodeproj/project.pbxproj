@@ -67,6 +67,9 @@
 		38AA1E1A27D0A46600AE5393 /* PlatformAdjustments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA1E1927D0A46600AE5393 /* PlatformAdjustments.swift */; };
 		38AA1E1B27D0A52400AE5393 /* PlatformAdjustments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA1E1827D0A41200AE5393 /* PlatformAdjustments.swift */; };
 		38AA1E1D27D0A56B00AE5393 /* Color+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA1E1C27D0A56B00AE5393 /* Color+Additions.swift */; };
+		38AA1E1E27D141E500AE5393 /* Persistence+StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A219127C5D678001F597F /* Persistence+StoreKit.swift */; };
+		38AA1E2027D1437500AE5393 /* EditProjectView+iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA1E1F27D1437500AE5393 /* EditProjectView+iOS.swift */; };
+		38AA1E2227D143A900AE5393 /* EditProjectView+macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA1E2127D143A900AE5393 /* EditProjectView+macOS.swift */; };
 		38B19C11278402BD004E4472 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = 38B19C14278402BD004E4472 /* Awards.json */; };
 		38B19C12278402BD004E4472 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = 38B19C14278402BD004E4472 /* Awards.json */; };
 		38D35D41277CF4C7002A9486 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D40277CF4C7002A9486 /* HomeView.swift */; };
@@ -211,6 +214,8 @@
 		38AA1E1827D0A41200AE5393 /* PlatformAdjustments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformAdjustments.swift; sourceTree = "<group>"; };
 		38AA1E1927D0A46600AE5393 /* PlatformAdjustments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformAdjustments.swift; sourceTree = "<group>"; };
 		38AA1E1C27D0A56B00AE5393 /* Color+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Additions.swift"; sourceTree = "<group>"; };
+		38AA1E1F27D1437500AE5393 /* EditProjectView+iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditProjectView+iOS.swift"; sourceTree = "<group>"; };
+		38AA1E2127D143A900AE5393 /* EditProjectView+macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditProjectView+macOS.swift"; sourceTree = "<group>"; };
 		38B19C0D278401BB004E4472 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		38B19C10278401FC004E4472 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = hu; path = hu.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		38B19C13278402BD004E4472 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Awards.json; sourceTree = "<group>"; };
@@ -404,6 +409,8 @@
 				385E93CD27842130007C1ADC /* ItemListView.swift */,
 				38D35D4D277D339F002A9486 /* EditItemView.swift */,
 				38D35D58277E410A002A9486 /* EditProjectView.swift */,
+				38AA1E1F27D1437500AE5393 /* EditProjectView+iOS.swift */,
+				38AA1E2127D143A900AE5393 /* EditProjectView+macOS.swift */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -763,6 +770,7 @@
 				38D3A27A27C7688900C38986 /* Persistence+Awards.swift in Sources */,
 				38D3A27727C7676F00C38986 /* Persistence+Reminders.swift in Sources */,
 				38D35D48277D0DD1002A9486 /* Item+Extension.swift in Sources */,
+				38AA1E2027D1437500AE5393 /* EditProjectView+iOS.swift in Sources */,
 				385E93D1278421A5007C1ADC /* ProjectSummaryView.swift in Sources */,
 				382A219227C5D678001F597F /* Persistence+StoreKit.swift in Sources */,
 				384CD00027B736E7004BEAA9 /* ContentView.swift in Sources */,
@@ -799,6 +807,7 @@
 				38AA1E1D27D0A56B00AE5393 /* Color+Additions.swift in Sources */,
 				386ED7992780326600495560 /* SelectSomethingView.swift in Sources */,
 				38FA8B4427CC78C40077A382 /* SharedProjectsView.swift in Sources */,
+				38AA1E2227D143A900AE5393 /* EditProjectView+macOS.swift in Sources */,
 				38AA1E1B27D0A52400AE5393 /* PlatformAdjustments.swift in Sources */,
 				385E93CF27842130007C1ADC /* ItemListView.swift in Sources */,
 				382A219027C5C4ED001F597F /* UnlockView.swift in Sources */,
@@ -811,6 +820,7 @@
 				385E93D2278421A5007C1ADC /* ProjectSummaryView.swift in Sources */,
 				38FA8B3B27CC77160077A382 /* SharedItem.swift in Sources */,
 				384CD00127B736E8004BEAA9 /* ContentView.swift in Sources */,
+				38AA1E1E27D141E500AE5393 /* Persistence+StoreKit.swift in Sources */,
 				38D35D56277E3E89002A9486 /* ProjectHeaderView.swift in Sources */,
 				382A218627C5C31D001F597F /* SKProduct-LocalizedPrice.swift in Sources */,
 				381BC069277C0D5E0055712F /* Portfolioish.xcdatamodeld in Sources */,
