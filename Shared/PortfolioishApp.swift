@@ -13,15 +13,28 @@ struct PortfolioishApp: App {
 	@StateObject var unlockManager: UnlockManager
 	var isTesting: Bool
 
+	#if os(iOS)
+		@UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+	#endif
+
 	init() {
 		isTesting = false
 
+		#if DEBUG
 		if CommandLine.arguments.contains("enable-testing") {
 			isTesting = true
+
+			#if os(iOS)
+			UIView.setAnimationsEnabled(false)
+			#endif
 		}
+		#endif
 
 		let persistence = Persistence(inMemory: isTesting)
 		_persistence = StateObject(wrappedValue: persistence)
+		if isTesting {
+			persistence.deleteAll()
+		}
 
 		let unlockManager = UnlockManager(persistence: persistence)
 		_unlockManager = StateObject(wrappedValue: unlockManager)
@@ -39,12 +52,10 @@ struct PortfolioishApp: App {
 			// scene phase so we can port to macOS, where scene
 			// phase won't detect our app losing focus.
 
-			#if os(macOS)
-				.onReceive(NotificationCenter.default.publisher(for: NSApplication.willResignActiveNotification), perform: save)
-			#else
-
-				.onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification), perform: save)
-			#endif
+			.onReceive(
+				NotificationCenter.default.publisher(for: .willResignActive),
+				perform: save
+			)
         }
     }
 

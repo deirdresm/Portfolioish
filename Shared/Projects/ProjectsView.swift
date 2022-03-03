@@ -79,34 +79,25 @@ struct ProjectsView: View {
 	}
 
 	var addProjectToolbarItem: some ToolbarContent {
-		ToolbarItem(placement: .navigationBarTrailing) {
+		ToolbarItem(placement: .primaryAction) {
 			if viewModel.showClosedProjects == false {
 				Button {
-//					withAnimation {
+					withAnimation {
 						viewModel.addProject()
-//					}
-				} label: {
-
-					// WORKAROUND: In iOS 14.3 VoiceOver has a glitch that reads the
-					// label "Add Project" as "Add" no matter what accessibility label
-					// we give this button when using a label. As a result, when
-					// VoiceOver is running we use a text view for the button instead,
-					// forcing a correct reading without losing the original layout.
-
-					if UIAccessibility.isVoiceOverRunning {
-						Text("Add Project")
-					} else {
-						Label("Add Project", systemImage: "plus")
 					}
+				} label: {
+					Label("Add Project", systemImage: "plus")
 				}
 			}
 		}
 	}
 
 	var sortOrderToolbarItem: some ToolbarContent {
-		ToolbarItem(placement: .navigationBarLeading) {
-			Button {
-				viewModel.showingSortOrder.toggle()
+		ToolbarItem(placement: .cancellationAction) {
+			Menu {
+				Button("Optimized") { (viewModel.sortOrder) = .optimized }
+				Button("Creation Date") { viewModel.sortOrder = .createdOn }
+				Button("Title") { viewModel.sortOrder = .title }
 			} label: {
 				Label("Sort", systemImage: "arrow.up.arrow.down")
 			}

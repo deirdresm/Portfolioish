@@ -10,10 +10,16 @@ import Foundation
 import SwiftUI
 
 extension ProjectsView {
+	public enum SortOrder {
+		case optimized, title, createdOn
+	}
+
 	class ViewModel: NSObject, ObservableObject, NSFetchedResultsControllerDelegate {
+
 		let persistence: Persistence
 
 		var showingSortOrder = false
+		var sortOrder: SortOrder = .optimized
 		var showClosedProjects: Bool
 
 		private let projectsController: NSFetchedResultsController<Project>

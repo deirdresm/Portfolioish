@@ -13,6 +13,7 @@ extension Item {
 	enum SortOrder {
 		case optimized, title, createdOn
 	}
+
 	var itemTitle: String {
 		title ?? NSLocalizedString("New Item", comment: "Create a new item")
 	}
