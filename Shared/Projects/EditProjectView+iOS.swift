@@ -5,7 +5,7 @@
 //  Created by Deirdre Saoirse Moen on 3/3/22.
 //
 
-import Foundation
+import UIKit
 
 extension EditProjectView {
 

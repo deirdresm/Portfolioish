@@ -84,5 +84,4 @@ extension HomeView {
 			try? persistence.createSampleData()
 		}
 	}
-
 }

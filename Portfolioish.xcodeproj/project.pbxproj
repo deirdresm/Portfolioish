@@ -52,6 +52,8 @@
 		386ED7A327812B1900495560 /* Award.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386ED7A127812B1900495560 /* Award.swift */; };
 		386ED7A52781645700495560 /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386ED7A42781645700495560 /* AwardsView.swift */; };
 		386ED7A62781645700495560 /* AwardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386ED7A42781645700495560 /* AwardsView.swift */; };
+		387426AD27D1FC340011BB1B /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387426AC27D1FC340011BB1B /* ChatMessage.swift */; };
+		387426AE27D1FC340011BB1B /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387426AC27D1FC340011BB1B /* ChatMessage.swift */; };
 		3885E783278EA6E9000E552D /* ProjectsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885E782278EA6E9000E552D /* ProjectsVM.swift */; };
 		3885E784278EA6E9000E552D /* ProjectsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885E782278EA6E9000E552D /* ProjectsVM.swift */; };
 		389279A12788F95600C1CBE8 /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389279A02788F95600C1CBE8 /* BaseTestCase.swift */; };
@@ -72,6 +74,10 @@
 		38AA1E2227D143A900AE5393 /* EditProjectView+macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA1E2127D143A900AE5393 /* EditProjectView+macOS.swift */; };
 		38B19C11278402BD004E4472 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = 38B19C14278402BD004E4472 /* Awards.json */; };
 		38B19C12278402BD004E4472 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = 38B19C14278402BD004E4472 /* Awards.json */; };
+		38BFE3E627DA7FFE00A897F5 /* Error+CloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BFE3E527DA7FFE00A897F5 /* Error+CloudKit.swift */; };
+		38BFE3E727DA7FFE00A897F5 /* Error+CloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BFE3E527DA7FFE00A897F5 /* Error+CloudKit.swift */; };
+		38BFE3E927DA854900A897F5 /* CloudError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BFE3E827DA854900A897F5 /* CloudError.swift */; };
+		38BFE3EA27DA854900A897F5 /* CloudError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BFE3E827DA854900A897F5 /* CloudError.swift */; };
 		38D35D41277CF4C7002A9486 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D40277CF4C7002A9486 /* HomeView.swift */; };
 		38D35D42277CF4C7002A9486 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D40277CF4C7002A9486 /* HomeView.swift */; };
 		38D35D44277CF57F002A9486 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D43277CF57F002A9486 /* ProjectsView.swift */; };
@@ -123,10 +129,8 @@
 		38FA8B4027CC78230077A382 /* LoadStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B3D27CC78230077A382 /* LoadStates.swift */; };
 		38FA8B4327CC78C40077A382 /* SharedProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B4227CC78C40077A382 /* SharedProjectsView.swift */; };
 		38FA8B4427CC78C40077A382 /* SharedProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B4227CC78C40077A382 /* SharedProjectsView.swift */; };
-		38FA8B4527CC78C40077A382 /* SharedProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B4227CC78C40077A382 /* SharedProjectsView.swift */; };
 		38FA8B4727CC8C720077A382 /* SharedItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B4627CC8C720077A382 /* SharedItemsView.swift */; };
 		38FA8B4827CC8C720077A382 /* SharedItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B4627CC8C720077A382 /* SharedItemsView.swift */; };
-		38FA8B4927CC8C720077A382 /* SharedItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B4627CC8C720077A382 /* SharedItemsView.swift */; };
 		38FA8B4B27CF54360077A382 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B4A27CF54360077A382 /* SignInView.swift */; };
 		38FA8B4C27CF54360077A382 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B4A27CF54360077A382 /* SignInView.swift */; };
 		38FA8B4D27CF54360077A382 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FA8B4A27CF54360077A382 /* SignInView.swift */; };
@@ -196,6 +200,7 @@
 		386ED79A278037DB00495560 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Bundle-Decodable.swift"; path = "Shared/Extensions/Bundle-Decodable.swift"; sourceTree = SOURCE_ROOT; };
 		386ED7A127812B1900495560 /* Award.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Award.swift; sourceTree = "<group>"; };
 		386ED7A42781645700495560 /* AwardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsView.swift; sourceTree = "<group>"; };
+		387426AC27D1FC340011BB1B /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		3885E782278EA6E9000E552D /* ProjectsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsVM.swift; sourceTree = "<group>"; };
 		3892799E2788F95600C1CBE8 /* PortfolioishiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PortfolioishiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		389279A02788F95600C1CBE8 /* BaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
@@ -220,6 +225,8 @@
 		38B19C10278401FC004E4472 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = hu; path = hu.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		38B19C13278402BD004E4472 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Awards.json; sourceTree = "<group>"; };
 		38B19C15278402C7004E4472 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = hu; path = hu.lproj/Awards.json; sourceTree = "<group>"; };
+		38BFE3E527DA7FFE00A897F5 /* Error+CloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+CloudKit.swift"; sourceTree = "<group>"; };
+		38BFE3E827DA854900A897F5 /* CloudError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudError.swift; sourceTree = "<group>"; };
 		38D35D40277CF4C7002A9486 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		38D35D43277CF57F002A9486 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 		38D35D47277D0DD1002A9486 /* Item+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+Extension.swift"; sourceTree = "<group>"; };
@@ -465,6 +472,7 @@
 			children = (
 				381BC066277C0D5E0055712F /* Portfolioish.xcdatamodeld */,
 				381BC06A277C137E0055712F /* Persistence.swift */,
+				38BFE3E827DA854900A897F5 /* CloudError.swift */,
 				382A219127C5D678001F597F /* Persistence+StoreKit.swift */,
 				38D3A27527C7665D00C38986 /* Persistence+Reminders.swift */,
 				38D3A27927C7688900C38986 /* Persistence+Awards.swift */,
@@ -481,6 +489,7 @@
 				38D35D50277D3B6A002A9486 /* Binding+Extension.swift */,
 				386ED79A278037DB00495560 /* Bundle-Decodable.swift */,
 				386ED794277FF71C00495560 /* Sequence+Sorting.swift */,
+				38BFE3E527DA7FFE00A897F5 /* Error+CloudKit.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -518,6 +527,7 @@
 				38FA8B3527CC751B0077A382 /* SharedProject.swift */,
 				38FA8B3927CC77160077A382 /* SharedItem.swift */,
 				38FA8B3D27CC78230077A382 /* LoadStates.swift */,
+				387426AC27D1FC340011BB1B /* ChatMessage.swift */,
 				38FA8B4227CC78C40077A382 /* SharedProjectsView.swift */,
 				38FA8B4A27CF54360077A382 /* SignInView.swift */,
 				38FA8B4627CC8C720077A382 /* SharedItemsView.swift */,
@@ -766,8 +776,11 @@
 				38D3A26627C7619D00C38986 /* PortfolioishWidget.intentdefinition in Sources */,
 				386ED7A227812B1900495560 /* Award.swift in Sources */,
 				386ED7A52781645700495560 /* AwardsView.swift in Sources */,
+				38BFE3E627DA7FFE00A897F5 /* Error+CloudKit.swift in Sources */,
+				38BFE3E927DA854900A897F5 /* CloudError.swift in Sources */,
 				38E860E027819F6700F92B6C /* Color+Additions.swift in Sources */,
 				38D3A27A27C7688900C38986 /* Persistence+Awards.swift in Sources */,
+				387426AD27D1FC340011BB1B /* ChatMessage.swift in Sources */,
 				38D3A27727C7676F00C38986 /* Persistence+Reminders.swift in Sources */,
 				38D35D48277D0DD1002A9486 /* Item+Extension.swift in Sources */,
 				38AA1E2027D1437500AE5393 /* EditProjectView+iOS.swift in Sources */,
@@ -798,6 +811,8 @@
 				38FA8B3727CC751B0077A382 /* SharedProject.swift in Sources */,
 				38D35D45277CF57F002A9486 /* ProjectsView.swift in Sources */,
 				386ED796277FF71C00495560 /* Sequence+Sorting.swift in Sources */,
+				38BFE3EA27DA854900A897F5 /* CloudError.swift in Sources */,
+				38BFE3E727DA7FFE00A897F5 /* Error+CloudKit.swift in Sources */,
 				38FA8B4827CC8C720077A382 /* SharedItemsView.swift in Sources */,
 				386ED79C278037DB00495560 /* Bundle-Decodable.swift in Sources */,
 				38D35D4C277D1A25002A9486 /* Project+Extension.swift in Sources */,
@@ -810,6 +825,7 @@
 				38AA1E2227D143A900AE5393 /* EditProjectView+macOS.swift in Sources */,
 				38AA1E1B27D0A52400AE5393 /* PlatformAdjustments.swift in Sources */,
 				385E93CF27842130007C1ADC /* ItemListView.swift in Sources */,
+				387426AE27D1FC340011BB1B /* ChatMessage.swift in Sources */,
 				382A219027C5C4ED001F597F /* UnlockView.swift in Sources */,
 				38D3A27B27C7688900C38986 /* Persistence+Awards.swift in Sources */,
 				386ED7A327812B1900495560 /* Award.swift in Sources */,
@@ -870,10 +886,8 @@
 				38D3A26F27C7642100C38986 /* Item+Extension.swift in Sources */,
 				38D3A2BE27CB5BF400C38986 /* ComplexWidget.swift in Sources */,
 				38D3A27427C7651A00C38986 /* Bundle-Decodable.swift in Sources */,
-				38FA8B4927CC8C720077A382 /* SharedItemsView.swift in Sources */,
 				38FA8B3827CC751B0077A382 /* SharedProject.swift in Sources */,
 				38FA8B4D27CF54360077A382 /* SignInView.swift in Sources */,
-				38FA8B4527CC78C40077A382 /* SharedProjectsView.swift in Sources */,
 				38D3A2B827CB559900C38986 /* Provider.swift in Sources */,
 				38D3A27327C764E500C38986 /* Award.swift in Sources */,
 				38D3A26027C7619C00C38986 /* PortfolioishWidget.swift in Sources */,
@@ -1068,7 +1082,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1101,7 +1115,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1266,7 +1280,7 @@
 				INFOPLIST_FILE = PortfolioishWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PortfolioishWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1296,7 +1310,7 @@
 				INFOPLIST_FILE = PortfolioishWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PortfolioishWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

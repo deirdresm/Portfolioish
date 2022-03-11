@@ -18,6 +18,9 @@ struct EditProjectView: View {
 
 	@Environment(\.presentationMode) var presentationMode
 
+	@AppStorage("username") var username: String?
+	@State private var showingSignIn = false
+
 	@State private var title: String
 	@State private var detail: String
 	@State private var color: String
@@ -30,6 +33,9 @@ struct EditProjectView: View {
 	@State private var reminderTime: Date
 
 	@State private var showingNotificationsError = false
+
+	@State private var cloudStatus = CloudStatus.checking
+	@State private var cloudError: CloudError?
 
 	let colorColumns = [
 		GridItem(.adaptive(minimum: 44))
@@ -66,6 +72,14 @@ struct EditProjectView: View {
 					showingDeleteConfirm.toggle()
 				}
 				.accentColor(.red)
+				.alert(isPresented: $showingDeleteConfirm) {
+					Alert(
+						title: Text("Delete project?"),
+						message: Text("Are you sure you want to delete this project? You will also delete all the items it contains."), // swiftlint:disable:this line_length
+						primaryButton: .default(Text("Delete"), action: delete),
+						secondaryButton: .cancel()
+					)
+				}
 			}
 
 			Section(header: Text("Project reminders")) {
@@ -90,33 +104,25 @@ struct EditProjectView: View {
 			}
 		}
 		.navigationTitle("Edit Project")
+		.sheet(isPresented: $showingSignIn, content: SignInView.init)
 		.toolbar {
-			Button {
-				let records = project.prepareCloudRecords()
-				let operation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
-				operation.savePolicy = .allKeys
-
-				operation.modifyRecordsResultBlock = { records in
-					switch records {
-					case .success:
-						CKContainer.default().publicCloudDatabase.add(operation)
-					case .failure(let error):
-						print("Error: \(error.localizedDescription)")
-					}
+			switch cloudStatus {
+			case .checking:
+				ProgressView()
+			case .exists:
+				Button {
+					removeFromCloud(deleteLocal: false)
+				} label: {
+					Label("Remove from iCloud", systemImage: "icloud.slash")
 				}
-
-//				CKContainer.default().publicCloudDatabase.add(operation)
-			} label: {
-				Label("Upload to iCloud", systemImage: "icloud.and.arrow.up")
+			case .absent:
+				Button(action: uploadToCloud) {
+					Label("Upload to iCloud", systemImage: "icloud.and.arrow.up")
+				}
 			}
 		}
+		.onAppear(perform: updateCloudStatus)
 		.onDisappear(perform: persistence.save)
-		.alert(isPresented: $showingDeleteConfirm) {
-			Alert(title: Text("Delete project?"),
-				  message: Text("Are you sure you want to delete this project? You will also delete all the items it contains."),
-				  primaryButton: .default(Text("Delete"),
-				  action: delete), secondaryButton: .cancel())
-		}
 	}
 
 	init(project: Project) {
@@ -167,6 +173,64 @@ struct EditProjectView: View {
 	  }
 	}
 
+	func updateCloudStatus() {
+		project.checkCloudStatus { exists in
+			if exists {
+				cloudStatus = .exists
+			} else {
+				cloudStatus = .absent
+			}
+		}
+	}
+
+	func uploadToCloud() {
+		if let username = username {
+			let records = project.prepareCloudRecords(owner: username)
+			let operation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
+			operation.savePolicy = .allKeys
+
+			operation.modifyRecordsCompletionBlock = { _, _, error in
+				if let error = error {
+					cloudError = error.getCloudKitError()
+				}
+
+				updateCloudStatus()
+			}
+			operation.modifyRecordsCompletionBlock = { _, _, _ in
+				updateCloudStatus()
+			}
+
+			cloudStatus = .checking
+
+			CKContainer.default().publicCloudDatabase.add(operation)
+		} else {
+			showingSignIn = true
+		}
+	}
+
+	func removeFromCloud(deleteLocal: Bool) {
+		let name = project.objectID.uriRepresentation().absoluteString
+		let id = CKRecord.ID(recordName: name)
+
+		let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [id])
+
+		operation.modifyRecordsCompletionBlock = { _, _, error in
+			if let error = error {
+				cloudError = error.getCloudKitError()
+			} else {
+				if deleteLocal {
+					persistence.delete(project)
+					presentationMode.wrappedValue.dismiss()
+				}
+			}
+
+			updateCloudStatus()
+		}
+
+		cloudStatus = .checking
+		CKContainer.default().publicCloudDatabase.add(operation)
+	}
+
 	func update() {
 		project.title = title
 		project.detail = detail
@@ -189,8 +253,12 @@ struct EditProjectView: View {
 		}	}
 
 	func delete() {
-		persistence.delete(project)
-		presentationMode.wrappedValue.dismiss()
+		if cloudStatus == .exists {
+			removeFromCloud(deleteLocal: true)
+		} else {
+			persistence.delete(project)
+			presentationMode.wrappedValue.dismiss()
+		}
 	}
 
 	func colorButton(for item: String) -> some View {

@@ -27,6 +27,11 @@ struct PortfolioishApp: App {
 			#if os(iOS)
 			UIView.setAnimationsEnabled(false)
 			#endif
+
+			// Fake Sign In With Apple for simulator runs
+			#if targetEnvironment(simulator)
+			UserDefaults.standard.set("deirdre", forKey: "username")
+			#endif
 		}
 		#endif
 

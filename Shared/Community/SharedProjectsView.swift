@@ -52,6 +52,26 @@ struct SharedProjectsView: View {
 		let operation = CKQueryOperation(query: query)
 		operation.desiredKeys = ["title", "detail", "owner", "closed"]
 		operation.resultsLimit = 50
+
+		operation.recordFetchedBlock = { record in
+			let id = record.recordID.recordName
+			let title = record["title"] as? String ?? "No title"
+			let detail = record["detail"] as? String ?? ""
+			let owner = record["owner"] as? String ?? "No owner"
+			let closed = record["closed"] as? Bool ?? false
+
+			let sharedProject = SharedProject(id: id, title: title, detail: detail, owner: owner, closed: closed)
+			projects.append(sharedProject)
+			loadState = .success
+		}
+
+		operation.queryCompletionBlock = { _, _ in
+			if projects.isEmpty {
+				loadState = .noResults
+			}
+		}
+
+		CKContainer.default().publicCloudDatabase.add(operation)
 	}
 }
 
