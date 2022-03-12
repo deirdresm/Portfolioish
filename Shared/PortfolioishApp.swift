@@ -25,7 +25,7 @@ struct PortfolioishApp: App {
 			isTesting = true
 
 			#if os(iOS)
-			UIView.setAnimationsEnabled(false)
+				UIView.setAnimationsEnabled(false)
 			#endif
 
 			// Fake Sign In With Apple for simulator runs

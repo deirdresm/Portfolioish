@@ -10,8 +10,14 @@ import SwiftUI
 struct ProjectSummaryView: View {
 	@ObservedObject var project: Project
 
+	var innerView: some View {
+
+	}
+
 	var body: some View {
+#if os(iOS)
 		NavigationLink(destination: EditProjectView(project: project)) {
+#endif
 			VStack(alignment: .leading) {
 				Text("\(project.projectItems.count) items")
 					.font(.caption)
@@ -30,6 +36,14 @@ struct ProjectSummaryView: View {
 				ProgressView(value: project.completionAmount)
 					.accentColor(Color(project.projectColor))
 			}
+#if os(macOS)
+			.padding()
+			.background(Color.secondarySystemGroupedBackground)
+			.cornerRadius(10)
+			.shadow(color: Color.black.opacity(0.2), radius: 5)
+			.accessibilityElement(children: .ignore)
+			.accessibilityLabel(project.label)
+#elseif os(iOS)
 		}
 		.padding()
 		.background(Color.secondarySystemGroupedBackground)
@@ -37,6 +51,7 @@ struct ProjectSummaryView: View {
 		.shadow(color: Color.black.opacity(0.2), radius: 5)
 		.accessibilityElement(children: .ignore)
 		.accessibilityLabel(project.label)
+#endif
     }
 }
 

@@ -24,7 +24,7 @@ struct HomeView: View {
 	}
 
 	var body: some View {
-		NavigationView {
+		StackNavigationView {
 			ScrollView {
 				VStack(alignment: .leading) {
 					ScrollView(.horizontal, showsIndicators: false) {

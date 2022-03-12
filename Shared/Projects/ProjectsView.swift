@@ -17,7 +17,7 @@ struct ProjectsView: View {
 	static let closedTag: String? = "Closed"
 
     var body: some View {
-		NavigationView {
+		StackNavigationView {
 			Group {
 				if viewModel.projects.isEmpty {
 					Text("There's nothing here right now.")
@@ -43,6 +43,7 @@ struct ProjectsView: View {
 					.default(Text("Title")) { viewModel.sortDescriptor = NSSortDescriptor(keyPath: \Item.title, ascending: true) }
 				]) // ActionSheet
 			} // .actionSheet
+#elseif os(macOS)
 #endif
 			SelectSomethingView()
 		}
@@ -71,11 +72,7 @@ struct ProjectsView: View {
 				}
 			}
 		} // List
-#if os(macOS)
-		.listStyle(.inset)
-#else
-		.listStyle(.insetGrouped)
-#endif
+		.listStyle(InsetGroupedListStyle())
 	}
 
 	var addProjectToolbarItem: some ToolbarContent {
@@ -95,7 +92,7 @@ struct ProjectsView: View {
 	var sortOrderToolbarItem: some ToolbarContent {
 		ToolbarItem(placement: .cancellationAction) {
 			Menu {
-				Button("Optimized") { (viewModel.sortOrder) = .optimized }
+				Button("Optimized") { viewModel.sortOrder = .optimized }
 				Button("Creation Date") { viewModel.sortOrder = .createdOn }
 				Button("Title") { viewModel.sortOrder = .title }
 			} label: {
