@@ -17,7 +17,7 @@ struct ProjectsView: View {
 	static let closedTag: String? = "Closed"
 
     var body: some View {
-		StackNavigationView {
+		SimpleStackNavigationView {
 			Group {
 				if viewModel.projects.isEmpty {
 					Text("There's nothing here right now.")

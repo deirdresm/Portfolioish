@@ -41,7 +41,6 @@
 		385E93CE27842130007C1ADC /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E93CD27842130007C1ADC /* ItemListView.swift */; };
 		385E93CF27842130007C1ADC /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E93CD27842130007C1ADC /* ItemListView.swift */; };
 		385E93D1278421A5007C1ADC /* ProjectSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E93D0278421A5007C1ADC /* ProjectSummaryView.swift */; };
-		385E93D2278421A5007C1ADC /* ProjectSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E93D0278421A5007C1ADC /* ProjectSummaryView.swift */; };
 		386ED795277FF71C00495560 /* Sequence+Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386ED794277FF71C00495560 /* Sequence+Sorting.swift */; };
 		386ED796277FF71C00495560 /* Sequence+Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386ED794277FF71C00495560 /* Sequence+Sorting.swift */; };
 		386ED7982780326600495560 /* SelectSomethingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386ED7972780326600495560 /* SelectSomethingView.swift */; };
@@ -74,11 +73,15 @@
 		38AA1E2227D143A900AE5393 /* EditProjectView+macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA1E2127D143A900AE5393 /* EditProjectView+macOS.swift */; };
 		38B19C11278402BD004E4472 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = 38B19C14278402BD004E4472 /* Awards.json */; };
 		38B19C12278402BD004E4472 /* Awards.json in Resources */ = {isa = PBXBuildFile; fileRef = 38B19C14278402BD004E4472 /* Awards.json */; };
+		38B211D427E7191D00FB0A29 /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B211D327E7191D00FB0A29 /* Optional+Extension.swift */; };
+		38B211D527E7196A00FB0A29 /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B211D327E7191D00FB0A29 /* Optional+Extension.swift */; };
 		38BFE3E627DA7FFE00A897F5 /* Error+CloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BFE3E527DA7FFE00A897F5 /* Error+CloudKit.swift */; };
 		38BFE3E727DA7FFE00A897F5 /* Error+CloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BFE3E527DA7FFE00A897F5 /* Error+CloudKit.swift */; };
 		38BFE3E927DA854900A897F5 /* CloudError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BFE3E827DA854900A897F5 /* CloudError.swift */; };
 		38BFE3EA27DA854900A897F5 /* CloudError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BFE3E827DA854900A897F5 /* CloudError.swift */; };
 		38BFE3EC27DB375400A897F5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38BFE3EB27DB375400A897F5 /* CloudKit.framework */; };
+		38BFE3EF27DC723B00A897F5 /* StackNavigationView in Frameworks */ = {isa = PBXBuildFile; productRef = 38BFE3EE27DC723B00A897F5 /* StackNavigationView */; };
+		38BFE3F127DC72B900A897F5 /* ProjectSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BFE3F027DC72B900A897F5 /* ProjectSummaryView.swift */; };
 		38D35D41277CF4C7002A9486 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D40277CF4C7002A9486 /* HomeView.swift */; };
 		38D35D42277CF4C7002A9486 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D40277CF4C7002A9486 /* HomeView.swift */; };
 		38D35D44277CF57F002A9486 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D43277CF57F002A9486 /* ProjectsView.swift */; };
@@ -226,9 +229,11 @@
 		38B19C10278401FC004E4472 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = hu; path = hu.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		38B19C13278402BD004E4472 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/Awards.json; sourceTree = "<group>"; };
 		38B19C15278402C7004E4472 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = hu; path = hu.lproj/Awards.json; sourceTree = "<group>"; };
+		38B211D327E7191D00FB0A29 /* Optional+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extension.swift"; sourceTree = "<group>"; };
 		38BFE3E527DA7FFE00A897F5 /* Error+CloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+CloudKit.swift"; sourceTree = "<group>"; };
 		38BFE3E827DA854900A897F5 /* CloudError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudError.swift; sourceTree = "<group>"; };
 		38BFE3EB27DB375400A897F5 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		38BFE3F027DC72B900A897F5 /* ProjectSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSummaryView.swift; sourceTree = "<group>"; };
 		38D35D40277CF4C7002A9486 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		38D35D43277CF57F002A9486 /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 		38D35D47277D0DD1002A9486 /* Item+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+Extension.swift"; sourceTree = "<group>"; };
@@ -276,6 +281,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38BFE3EF27DC723B00A897F5 /* StackNavigationView in Frameworks */,
 				38BFE3EC27DB375400A897F5 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,10 +315,10 @@
 		381BC042277C0A660055712F = {
 			isa = PBXGroup;
 			children = (
-				38D3A27C27C7717100C38986 /* PortfolioishWidgetExtension.entitlements */,
 				381BC047277C0A660055712F /* Shared */,
 				38D3A24D27C6196300C38986 /* iOS */,
 				381BC056277C0A670055712F /* macOS */,
+				38D3A27C27C7717100C38986 /* PortfolioishWidgetExtension.entitlements */,
 				38D3A25E27C7619C00C38986 /* PortfolioishWidget */,
 				3892799F2788F95600C1CBE8 /* PortfolioishiOSTests */,
 				389279BA278B988E00C1CBE8 /* PortfolioishiOSUITests */,
@@ -356,6 +362,7 @@
 			children = (
 				381BC057277C0A670055712F /* macOS.entitlements */,
 				38AA1E1827D0A41200AE5393 /* PlatformAdjustments.swift */,
+				38BFE3F027DC72B900A897F5 /* ProjectSummaryView.swift */,
 				38AA1E1C27D0A56B00AE5393 /* Color+Additions.swift */,
 			);
 			path = macOS;
@@ -405,7 +412,6 @@
 				38D35D40277CF4C7002A9486 /* HomeView.swift */,
 				3816057827ACD81700BD2C46 /* HomeViewVM.swift */,
 				381BC049277C0A660055712F /* ContentView.swift */,
-				385E93D0278421A5007C1ADC /* ProjectSummaryView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -494,6 +500,7 @@
 				386ED79A278037DB00495560 /* Bundle-Decodable.swift */,
 				386ED794277FF71C00495560 /* Sequence+Sorting.swift */,
 				38BFE3E527DA7FFE00A897F5 /* Error+CloudKit.swift */,
+				38B211D327E7191D00FB0A29 /* Optional+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -507,6 +514,7 @@
 				38E860DF27819F6700F92B6C /* Color+Additions.swift */,
 				38D3A25327C61AAA00C38986 /* SceneDelegate.swift */,
 				38AA1E1927D0A46600AE5393 /* PlatformAdjustments.swift */,
+				385E93D0278421A5007C1ADC /* ProjectSummaryView.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -575,6 +583,9 @@
 			dependencies = (
 			);
 			name = "Portfolioish (macOS)";
+			packageProductDependencies = (
+				38BFE3EE27DC723B00A897F5 /* StackNavigationView */,
+			);
 			productName = "Portfolioish (macOS)";
 			productReference = 381BC055277C0A670055712F /* Portfolioish.app */;
 			productType = "com.apple.product-type.application";
@@ -671,6 +682,9 @@
 				hu,
 			);
 			mainGroup = 381BC042277C0A660055712F;
+			packageReferences = (
+				38BFE3ED27DC723A00A897F5 /* XCRemoteSwiftPackageReference "StackNavigationView" */,
+			);
 			productRefGroup = 381BC050277C0A670055712F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -783,6 +797,7 @@
 				38BFE3E627DA7FFE00A897F5 /* Error+CloudKit.swift in Sources */,
 				38BFE3E927DA854900A897F5 /* CloudError.swift in Sources */,
 				38E860E027819F6700F92B6C /* Color+Additions.swift in Sources */,
+				38B211D427E7191D00FB0A29 /* Optional+Extension.swift in Sources */,
 				38D3A27A27C7688900C38986 /* Persistence+Awards.swift in Sources */,
 				387426AD27D1FC340011BB1B /* ChatMessage.swift in Sources */,
 				38D3A27727C7676F00C38986 /* Persistence+Reminders.swift in Sources */,
@@ -818,6 +833,7 @@
 				38BFE3EA27DA854900A897F5 /* CloudError.swift in Sources */,
 				38BFE3E727DA7FFE00A897F5 /* Error+CloudKit.swift in Sources */,
 				38FA8B4827CC8C720077A382 /* SharedItemsView.swift in Sources */,
+				38BFE3F127DC72B900A897F5 /* ProjectSummaryView.swift in Sources */,
 				386ED79C278037DB00495560 /* Bundle-Decodable.swift in Sources */,
 				38D35D4C277D1A25002A9486 /* Project+Extension.swift in Sources */,
 				3816057A27ACD81700BD2C46 /* HomeViewVM.swift in Sources */,
@@ -836,8 +852,8 @@
 				386ED7A62781645700495560 /* AwardsView.swift in Sources */,
 				38D3A27827C7677200C38986 /* Persistence+Reminders.swift in Sources */,
 				38FA8B4C27CF54360077A382 /* SignInView.swift in Sources */,
+				38B211D527E7196A00FB0A29 /* Optional+Extension.swift in Sources */,
 				38D35D49277D0DD1002A9486 /* Item+Extension.swift in Sources */,
-				385E93D2278421A5007C1ADC /* ProjectSummaryView.swift in Sources */,
 				38FA8B3B27CC77160077A382 /* SharedItem.swift in Sources */,
 				384CD00127B736E8004BEAA9 /* ContentView.swift in Sources */,
 				38AA1E1E27D141E500AE5393 /* Persistence+StoreKit.swift in Sources */,
@@ -1390,6 +1406,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		38BFE3ED27DC723A00A897F5 /* XCRemoteSwiftPackageReference "StackNavigationView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lbrndnr/StackNavigationView";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		38BFE3EE27DC723B00A897F5 /* StackNavigationView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 38BFE3ED27DC723A00A897F5 /* XCRemoteSwiftPackageReference "StackNavigationView" */;
+			productName = StackNavigationView;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		381BC066277C0D5E0055712F /* Portfolioish.xcdatamodeld */ = {

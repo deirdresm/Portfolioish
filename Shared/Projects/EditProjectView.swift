@@ -129,7 +129,7 @@ struct EditProjectView: View {
 		self.project = project
 
 		_title = State(wrappedValue: project.projectTitle)
-		_detail = State(wrappedValue: project.projectDetail)
+		_detail = State(wrappedValue: project.detail.orEmpty)
 		_color = State(wrappedValue: project.projectColor)
 
 		if let projectReminderTime = project.reminderTime {

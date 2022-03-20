@@ -18,14 +18,6 @@ extension Item {
 		title ?? NSLocalizedString("New Item", comment: "Create a new item")
 	}
 
-	var itemDetail: String {
-		detail ?? ""
-	}
-
-	var itemCreatedOn: Date {
-		createdOn ?? Date()
-	}
-
 	var projectTitle: String {
 		project?.projectTitle ?? ""
 	}
@@ -40,4 +32,5 @@ extension Item {
 		item.priority = 3
 		item.createdOn = Date()
 		return item
-	}}
+	}
+}

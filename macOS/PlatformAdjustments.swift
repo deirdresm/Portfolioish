@@ -14,7 +14,7 @@ extension Notification.Name {
 	static let willResignActive = NSApplication.willResignActiveNotification
 }
 
-struct StackNavigationView<Content: View>: View {
+struct SimpleStackNavigationView<Content: View>: View {
 	@ViewBuilder let content: () -> Content
 
 	var body: some View {

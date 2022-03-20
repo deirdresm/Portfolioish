@@ -251,7 +251,7 @@ class Persistence: ObservableObject {
 
 		let attributeSet = CSSearchableItemAttributeSet(contentType: .text)
 		attributeSet.title = item.title
-		attributeSet.contentDescription = item.itemDetail
+		attributeSet.contentDescription = item.detail.orEmpty
 
 		let searchableItem = CSSearchableItem(uniqueIdentifier: itemID,
 											  domainIdentifier: projectID,

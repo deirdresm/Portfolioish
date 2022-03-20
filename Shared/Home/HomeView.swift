@@ -8,6 +8,9 @@
 import CoreData
 import CoreSpotlight
 import SwiftUI
+#if os(macOS)
+	import StackNavigationView
+#endif
 
 struct HomeView: View {
 	static let tag: String? = "Home"
@@ -24,7 +27,7 @@ struct HomeView: View {
 	}
 
 	var body: some View {
-		StackNavigationView {
+		SimpleStackNavigationView {
 			ScrollView {
 				VStack(alignment: .leading) {
 					ScrollView(.horizontal, showsIndicators: false) {
@@ -76,7 +79,7 @@ struct HomeView: View {
 				.padding(.top)
 
 			ForEach(items) { item in
-				NavigationLink(destination: EditItemView(item: item)) {
+				StackNavigationLink(destination: EditItemView(item: item)) {
 					HStack(spacing: 20) {
 						Circle()
 							.stroke(Color(item.project?.projectColor ?? "Light Blue"), lineWidth: 3)
@@ -87,8 +90,8 @@ struct HomeView: View {
 								.foregroundColor(.primary)
 								.frame(maxWidth: .infinity, alignment: .leading)
 
-							if item.itemDetail.isEmpty == false {
-								Text(item.itemDetail)
+							if item.detail?.isEmpty == false {
+								Text(item.detail.orEmpty)
 									.foregroundColor(.secondary)
 							}
 						}
@@ -98,6 +101,7 @@ struct HomeView: View {
 					.cornerRadius(10)
 					.shadow(color: Color.black.opacity(0.2), radius: 5)
 				}
+				.frame(minHeight: 44)
 			}
 		}
 	}

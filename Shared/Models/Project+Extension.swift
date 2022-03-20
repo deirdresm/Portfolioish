@@ -22,10 +22,6 @@ extension Project {
 		title ?? NSLocalizedString("New Project", comment: "Create a new project")
 	}
 
-	var projectDetail: String {
-		detail ?? ""
-	}
-
 	var projectColor: String {
 		color ?? "Light Blue"
 	}
@@ -77,7 +73,7 @@ extension Project {
 				return false
 			}
 
-			return first.itemCreatedOn < second.itemCreatedOn
+			return first.createdOn.orNow < second.createdOn.orNow
 		}
 	}
 
@@ -99,7 +95,7 @@ extension Project {
 		let parentID = CKRecord.ID(recordName: parentName)
 		let parent = CKRecord(recordType: "Project", recordID: parentID)
 		parent["title"] = projectTitle
-		parent["detail"] = projectDetail
+		parent["detail"] = detail.orEmpty
 		parent["owner"] = owner
 		parent["closed"] = closed
 
@@ -108,7 +104,7 @@ extension Project {
 			let childID = CKRecord.ID(recordName: childName)
 			let child = CKRecord(recordType: "Item", recordID: childID)
 			child["title"] = item.itemTitle
-			child["detail"] = item.itemDetail
+			child["detail"] = item.detail.orEmpty
 			child["completed"] = item.completed
 			child["project"] = CKRecord.Reference(recordID: parentID, action: .deleteSelf)
 			return child

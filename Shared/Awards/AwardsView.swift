@@ -19,7 +19,7 @@ struct AwardsView: View {
 		[GridItem(.adaptive(minimum: 100, maximum: 100))]
 	}
     var body: some View {
-		StackNavigationView {
+		SimpleStackNavigationView {
 			ScrollView {
 				LazyVGrid(columns: columns) {
 					ForEach(Award.allAwards) { award in

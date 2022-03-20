@@ -20,7 +20,7 @@ struct EditItemView: View {
 		self.item = item
 
 		_title = State(wrappedValue: item.itemTitle)
-		_detail = State(wrappedValue: item.itemDetail)
+		_detail = State(wrappedValue: item.detail.orEmpty)
 		_priority = State(wrappedValue: Int(item.priority))
 		_completed = State(wrappedValue: item.completed)
 	}
