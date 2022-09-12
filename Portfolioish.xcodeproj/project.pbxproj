@@ -31,6 +31,9 @@
 		382A218F27C5C4ED001F597F /* UnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A218E27C5C4ED001F597F /* UnlockView.swift */; };
 		382A219027C5C4ED001F597F /* UnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A218E27C5C4ED001F597F /* UnlockView.swift */; };
 		382A219227C5D678001F597F /* Persistence+StoreKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382A219127C5D678001F597F /* Persistence+StoreKit.swift */; };
+		38421D1628CD46690052929D /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38421D1528CD46690052929D /* ItemRowView.swift */; };
+		38421D1728CD46690052929D /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38421D1528CD46690052929D /* ItemRowView.swift */; };
+		38421D1928CECFE20052929D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38421D1828CECFE20052929D /* HomeView.swift */; };
 		38497539278CFB6600C505F8 /* PerformanceMiniTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38497538278CFB6600C505F8 /* PerformanceMiniTests.swift */; };
 		3849753A278CFCFD00C505F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38A1C9802786B5390015783F /* Localizable.strings */; };
 		3849753B278CFCFD00C505F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38A1C9802786B5390015783F /* Localizable.strings */; };
@@ -38,6 +41,7 @@
 		3849753D278CFD0200C505F8 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 38B19C0E278401BB004E4472 /* Localizable.stringsdict */; };
 		384CD00027B736E7004BEAA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BC049277C0A660055712F /* ContentView.swift */; };
 		384CD00127B736E8004BEAA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BC049277C0A660055712F /* ContentView.swift */; };
+		38570C51280FC8C0003831BF /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B211D327E7191D00FB0A29 /* Optional+Extension.swift */; };
 		385E93CE27842130007C1ADC /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E93CD27842130007C1ADC /* ItemListView.swift */; };
 		385E93CF27842130007C1ADC /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E93CD27842130007C1ADC /* ItemListView.swift */; };
 		385E93D1278421A5007C1ADC /* ProjectSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E93D0278421A5007C1ADC /* ProjectSummaryView.swift */; };
@@ -82,7 +86,6 @@
 		38BFE3EC27DB375400A897F5 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38BFE3EB27DB375400A897F5 /* CloudKit.framework */; };
 		38BFE3EF27DC723B00A897F5 /* StackNavigationView in Frameworks */ = {isa = PBXBuildFile; productRef = 38BFE3EE27DC723B00A897F5 /* StackNavigationView */; };
 		38BFE3F127DC72B900A897F5 /* ProjectSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BFE3F027DC72B900A897F5 /* ProjectSummaryView.swift */; };
-		38D35D41277CF4C7002A9486 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D40277CF4C7002A9486 /* HomeView.swift */; };
 		38D35D42277CF4C7002A9486 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D40277CF4C7002A9486 /* HomeView.swift */; };
 		38D35D44277CF57F002A9486 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D43277CF57F002A9486 /* ProjectsView.swift */; };
 		38D35D45277CF57F002A9486 /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D35D43277CF57F002A9486 /* ProjectsView.swift */; };
@@ -196,6 +199,8 @@
 		382A218B27C5C42B001F597F /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		382A218E27C5C4ED001F597F /* UnlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockView.swift; sourceTree = "<group>"; };
 		382A219127C5D678001F597F /* Persistence+StoreKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+StoreKit.swift"; sourceTree = "<group>"; };
+		38421D1528CD46690052929D /* ItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowView.swift; sourceTree = "<group>"; };
+		38421D1828CECFE20052929D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		38497538278CFB6600C505F8 /* PerformanceMiniTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceMiniTests.swift; sourceTree = "<group>"; };
 		385E93CD27842130007C1ADC /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		385E93D0278421A5007C1ADC /* ProjectSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSummaryView.swift; sourceTree = "<group>"; };
@@ -360,6 +365,7 @@
 		381BC056277C0A670055712F /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				38D35D40277CF4C7002A9486 /* HomeView.swift */,
 				381BC057277C0A670055712F /* macOS.entitlements */,
 				38AA1E1827D0A41200AE5393 /* PlatformAdjustments.swift */,
 				38BFE3F027DC72B900A897F5 /* ProjectSummaryView.swift */,
@@ -409,7 +415,6 @@
 		3892795F2787A24800C1CBE8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				38D35D40277CF4C7002A9486 /* HomeView.swift */,
 				3816057827ACD81700BD2C46 /* HomeViewVM.swift */,
 				381BC049277C0A660055712F /* ContentView.swift */,
 			);
@@ -419,11 +424,12 @@
 		389279602787A25000C1CBE8 /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				3885E782278EA6E9000E552D /* ProjectsVM.swift */,
 				38D35D43277CF57F002A9486 /* ProjectsView.swift */,
+				3885E782278EA6E9000E552D /* ProjectsVM.swift */,
 				386ED7972780326600495560 /* SelectSomethingView.swift */,
 				38D35D54277E3E89002A9486 /* ProjectHeaderView.swift */,
 				385E93CD27842130007C1ADC /* ItemListView.swift */,
+				38421D1528CD46690052929D /* ItemRowView.swift */,
 				38D35D4D277D339F002A9486 /* EditItemView.swift */,
 				38D35D58277E410A002A9486 /* EditProjectView.swift */,
 				38AA1E1F27D1437500AE5393 /* EditProjectView+iOS.swift */,
@@ -510,6 +516,7 @@
 			children = (
 				38D3A24F27C6198B00C38986 /* Portfolioish (iOS).entitlements */,
 				38D3A24E27C6198B00C38986 /* Portfolioish--iOS--Info.plist */,
+				38421D1828CECFE20052929D /* HomeView.swift */,
 				38D3A25127C61A9D00C38986 /* AppDelegate.swift */,
 				38E860DF27819F6700F92B6C /* Color+Additions.swift */,
 				38D3A25327C61AAA00C38986 /* SceneDelegate.swift */,
@@ -801,6 +808,8 @@
 				38D3A27A27C7688900C38986 /* Persistence+Awards.swift in Sources */,
 				387426AD27D1FC340011BB1B /* ChatMessage.swift in Sources */,
 				38D3A27727C7676F00C38986 /* Persistence+Reminders.swift in Sources */,
+				38421D1628CD46690052929D /* ItemRowView.swift in Sources */,
+				38421D1928CECFE20052929D /* HomeView.swift in Sources */,
 				38D35D48277D0DD1002A9486 /* Item+Extension.swift in Sources */,
 				38AA1E2027D1437500AE5393 /* EditProjectView+iOS.swift in Sources */,
 				385E93D1278421A5007C1ADC /* ProjectSummaryView.swift in Sources */,
@@ -813,7 +822,6 @@
 				381BC058277C0A670055712F /* PortfolioishApp.swift in Sources */,
 				382A218C27C5C42B001F597F /* ProductView.swift in Sources */,
 				382A218927C5C3AE001F597F /* PurchaseButton.swift in Sources */,
-				38D35D41277CF4C7002A9486 /* HomeView.swift in Sources */,
 				38D35D59277E410A002A9486 /* EditProjectView.swift in Sources */,
 				381BC06B277C137E0055712F /* Persistence.swift in Sources */,
 				3885E783278EA6E9000E552D /* ProjectsVM.swift in Sources */,
@@ -854,6 +862,7 @@
 				38FA8B4C27CF54360077A382 /* SignInView.swift in Sources */,
 				38B211D527E7196A00FB0A29 /* Optional+Extension.swift in Sources */,
 				38D35D49277D0DD1002A9486 /* Item+Extension.swift in Sources */,
+				38421D1728CD46690052929D /* ItemRowView.swift in Sources */,
 				38FA8B3B27CC77160077A382 /* SharedItem.swift in Sources */,
 				384CD00127B736E8004BEAA9 /* ContentView.swift in Sources */,
 				38AA1E1E27D141E500AE5393 /* Persistence+StoreKit.swift in Sources */,
@@ -901,6 +910,7 @@
 			files = (
 				38D3A26527C7619D00C38986 /* PortfolioishWidget.intentdefinition in Sources */,
 				38D3A27127C7642100C38986 /* Project+Extension.swift in Sources */,
+				38570C51280FC8C0003831BF /* Optional+Extension.swift in Sources */,
 				38D3A27227C7646E00C38986 /* Sequence+Sorting.swift in Sources */,
 				38D3A26E27C763C900C38986 /* Portfolioish.xcdatamodeld in Sources */,
 				38D3A26F27C7642100C38986 /* Item+Extension.swift in Sources */,
@@ -973,6 +983,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1020,8 +1031,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1034,6 +1045,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1075,8 +1087,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1211,6 +1223,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = V3N8JZ2T92;
@@ -1231,6 +1244,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = V3N8JZ2T92;

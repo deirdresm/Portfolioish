@@ -24,6 +24,8 @@ extension ProjectsView {
 
 		private let projectsController: NSFetchedResultsController<Project>
 		@Published var projects = [Project]()
+		@Published var selectedItem: Item?
+
 		@Published var showingUnlockView = false
 
 		@State var sortDescriptor: NSSortDescriptor?
@@ -84,6 +86,11 @@ extension ProjectsView {
 				persistence.delete(item)
 			}
 
+			persistence.save()
+		}
+
+		func delete(_ item: Item) {
+			persistence.delete(item)
 			persistence.save()
 		}
 

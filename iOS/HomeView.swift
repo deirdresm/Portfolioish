@@ -14,7 +14,6 @@ import SwiftUI
 
 struct HomeView: View {
 	static let tag: String? = "Home"
-
 	@StateObject var viewModel: ViewModel
 
 	var projectRows: [GridItem] {
